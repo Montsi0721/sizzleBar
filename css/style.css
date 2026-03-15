@@ -375,6 +375,7 @@ section:not(.hero-carousel) {
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     color: #c8102e;
+    margin-top: 20px;
     margin-bottom: 25px;
     padding-bottom: 10px;
     border-bottom: 2px solid #f9a602;
@@ -399,6 +400,7 @@ section:not(.hero-carousel) {
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 25px;
     margin-bottom: 30px;
+    margin: 0 -20px;
 }
 
 .menu-item-simple {

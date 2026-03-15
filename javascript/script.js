@@ -989,10 +989,6 @@ function initializeDarkMode() {
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
     const savedTheme = localStorage.getItem('theme');
 
-    // Enable dark mode if:
-    // - user previously chose dark, OR
-    // - user has never set a preference AND system prefers dark, OR
-    // - system prefers dark AND user hasn't explicitly chosen light this session
     if (savedTheme === 'dark' || (!savedTheme && prefersDarkScheme.matches)) {
         enableDarkMode();
     }
