@@ -3,17 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sizzle Bar | Kota Specialists</title>
+    <title>Top Grill | Kota Specialists</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header style="padding: 15px 0px; background-color: rgba(26, 26, 26, 0.98);">
-        <div class="container header-container">
+        <div class="header-container">
             <div>
-                <div class="logo">SIZZLE <span>BAR</span></div>
-                <div class="tagline">KOTA SPECIALISTS</div>
+                <div class="logo">Top <span class="grill-fire">
+                    <span class="grill-text">Grill</span>
+                    <span class="flames" aria-hidden="true">
+                        <span class="flame f1"></span>
+                        <span class="flame f2"></span>
+                        <span class="flame f3"></span>
+                        <span class="flame f4"></span>
+                        <span class="flame f5"></span>
+                    </span>
+                    <span class="ember e1"></span>
+                    <span class="ember e2"></span>
+                    <span class="ember e3"></span>
+                </span></div>
+                <div class="tagline">FOOD SPECIALISTS</div>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
@@ -25,7 +37,7 @@
                     <li><a href="#menu">Menu</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li class="dark-mode-toggle-container">
-                        <button id="darkModeToggle" class="dark-mode-toggle" title="Toggle Dark Mode">
+                        <button id="darkModeToggle" class="dark-mode-toggle">
                             <i class="fas fa-moon"></i>
                             <span>Dark Mode</span>
                         </button>
@@ -140,11 +152,10 @@
             <h2 class="section-title">Our Menu</h2>
             <div class="menu-tabs">
                 <button class="tab-btn active" data-tab="all">All</button>
-                <button class="tab-btn" data-tab="burgers">Burgers</button>
-                <button class="tab-btn" data-tab="kotas">Kotas</button>
-                <button class="tab-btn" data-tab="chinese">Chinese Food</button>
-                <button class="tab-btn" data-tab="chesanyama">Chesa-nyama</button>
+                <button class="tab-btn" data-tab="BreakFast">BreakFast</button>
+                <button class="tab-btn" data-tab="Lunch">Lunch</button>
                 <button class="tab-btn" data-tab="classics">Classics</button>
+                <button class="tab-btn" data-tab="Drinks">Drinks</button>
             </div>
             <!-- Menu content will be dynamically populated here -->
         </div>
@@ -152,35 +163,26 @@
 
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title" style="color: white;">Order Now</h2>
+            <h2 class="section-title">Order Now</h2>
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Contact</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Ha Pena Pena, Kofi Ana Road & Abia Road Junction</p>
-                    <p><i class="fas fa-phone"></i> +266 57470711</p>
-                    <p><i class="fas fa-envelope"></i> orders@sizzlebar.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mookoli, Modise complex opposite Engine filling station</p>
+                    <p><i class="fas fa-phone"></i> +266 56468656 | +266 58858870</p>
+                    <p><i class="fas fa-envelope"></i> topgrill@gmail.com</p>
 
                     <div class="social-links">
                         <a href="https://www.facebook.com/profile.php?id=61584632849238" target="_blank"
                             title="Follow us on Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://wa.me/26657470711" target="_blank" title="Order on WhatsApp">
+                        <a href="https://wa.me/56468656" target="_blank" title="Order on WhatsApp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                         <a href="https://www.instagram.com/sizz.le25/" target="_blank" title="Follow us on Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
-
-                    <!-- <div class="order-buttons">
-                        <a href="tel:+26657470711" class="order-btn">
-                            <i class="fas fa-phone"></i> Call to Order
-                        </a>
-                        <a href="https://wa.me/26657470711" target="_blank" class="order-btn">
-                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
-                        </a>
-                    </div> -->
                 </div>
                 <div class="contact-hours">
                     <h3>Opening Hours</h3>
@@ -210,7 +212,7 @@
 
                 <div class="form-group">
                     <label for="customerPhone"><i class="fas fa-phone"></i> Phone Number *</label>
-                    <input type="tel" id="customerPhone" name="customerPhone" placeholder="e.g., 266 5747 0711"
+                    <input type="tel" id="customerPhone" name="customerPhone" placeholder="e.g., 266 5646 8656"
                         required>
                 </div>
 
@@ -318,8 +320,8 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 Sizzle Bar - Kota Specialists. All rights reserved.</p>
-            <p>Ha Pena Pena, Kofi Ana Road & Abia Road Junction | +266 57470711</p>
+            <p>© 2025 Top Grill - Kota Specialists. All rights reserved.</p>
+            <p>Mookoli, Modise complex opposite Engine filling station <br> +266 56468656 | +266 58858870</p>
             <p style="margin-top: 10px; font-size: 0.8rem;">Kota • Burgers • Chinese Food • Chesa-nyama • Local Favorite
             </p>
         </div>
