@@ -7,35 +7,35 @@ const menuData = {
             {
                 name: "Break Fast Sandwich",
                 price: "M35",
-                image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/break-fast1.jpg",
                 description: "Chicken Mayo, baked beans, Vianna, Boiled Eggs",
                 category: "Break Fast"
             },
             {
                 name: "Break Fast Sandwich",
                 price: "M35",
-                image: "https://images.unsplash.com/photo-1550507992-eb63ffee0847?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/break-fast2.jpg",
                 description: "Chicken Mayo, Green Salad, vianna, Scrambled eggs",
                 category: "Break Fast"
             },
             {
                 name: "Break Fast Sandwic",
                 price: "M20",
-                image: "https://images.unsplash.com/photo-1481070555726-e2fe8357725c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/break-fast3.jpeg",
                 description: "Chicken Mayo, Vegetables",
                 category: "Break Fast"
             },
             {
                 name: "Break Fast Burger",
                 price: "M25",
-                image: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/break-fast4.jpeg",
                 description: "Ham, Cheeze, Scrambled eggs, lettus",
                 category: "Break Fast"
             },
             {
                 name: "Break Fast Mini Pizza",
                 price: "M20",
-                image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/break-fast5.jpeg",
                 description: "Chicken, Ham, Vegetables",
                 category: "Break Fast"
             }
@@ -49,7 +49,7 @@ const menuData = {
             {
                 name: "Wors",
                 price: "M30",
-                image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/lunch1.jpeg",
                 description: "Traditional South African sausage with sides",
                 category: "Lunch",
                 starchOptions: [{label:"Papa",addon:5},{label:"Samp",addon:10},{label:"Rice",addon:10},{label:"Leqebekoane",addon:5}]
@@ -57,7 +57,7 @@ const menuData = {
             {
                 name: "Chicken",
                 price: "M35",
-                image: "https://images.unsplash.com/photo-1598103442097-8b74394b95c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/lunch2.jpeg",
                 description: "Juicy chicken portions with traditional sides",
                 category: "Lunch",
                 starchOptions: [{label:"Papa",addon:5},{label:"Samp",addon:10},{label:"Rice",addon:10},{label:"Leqebekoane",addon:5}]
@@ -65,7 +65,7 @@ const menuData = {
             {
                 name: "Pork",
                 price: "M40",
-                image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/lunch3.jpeg",
                 description: "Tender pork cuts served with papa and moroho/chakalaka",
                 category: "Lunch",
                 starchOptions: [{label:"Papa",addon:5},{label:"Samp",addon:10},{label:"Rice",addon:10},{label:"Leqebekoane",addon:5}]
@@ -73,7 +73,7 @@ const menuData = {
             {
                 name: "Beef",
                 price: "M45",
-                image: "https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/lunch4.jpeg",
                 description: "Flavorful beef cuts with traditional accompaniments",
                 category: "Lunch",
                 starchOptions: [{label:"Papa",addon:5},{label:"Samp",addon:10},{label:"Rice",addon:10},{label:"Leqebekoane",addon:5}]
@@ -81,7 +81,7 @@ const menuData = {
             {
                 name: "Oxtail",
                 price: "M45",
-                image: "https://images.unsplash.com/photo-1574484284002-952d92456975?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/lunch5.jpeg",
                 description: "Slow-cooked tender oxtail with rich sauce",
                 category: "Lunch",
                 starchOptions: [{label:"Papa",addon:5},{label:"Samp",addon:10},{label:"Rice",addon:10},{label:"Leqebekoane",addon:5}]
@@ -89,7 +89,7 @@ const menuData = {
             {
                 name: "Likahare",
                 price: "M45",
-                image: "https://images.unsplash.com/photo-1562802378-063ec186a863?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/lunch6.jpeg",
                 description: "Traditional tripe served with accompaniments",
                 category: "Lunch",
                 starchOptions: [{label:"Papa",addon:5},{label:"Samp",addon:10},{label:"Rice",addon:10},{label:"Leqebekoane",addon:5}]
@@ -97,7 +97,7 @@ const menuData = {
             {
                 name: "Chicken Livers",
                 price: "M45",
-                image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/lunch7.jpeg",
                 description: "Spicy peri-peri chicken livers with sides",
                 category: "Lunch",
                 starchOptions: [{label:"Papa",addon:5},{label:"Samp",addon:10},{label:"Rice",addon:10},{label:"Leqebekoane",addon:5}]
@@ -105,7 +105,7 @@ const menuData = {
             {
                 name: "Chicken Hearts",
                 price: "M45",
-                image: "https://images.unsplash.com/photo-1606728035253-49e8a23146de?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/lunch8.jpeg",
                 description: "Grilled chicken hearts seasoned to perfection",
                 category: "Lunch",
                 starchOptions: [{label:"Papa",addon:5},{label:"Leqebekoane",addon:5}]
@@ -113,7 +113,7 @@ const menuData = {
             {
                 name: "Linaoa",
                 price: "M45",
-                image: "https://images.unsplash.com/photo-1608500218890-c4f9c4a8ad39?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/lunch9.jpeg",
                 description: "Traditional beans served with accompaniments",
                 category: "Lunch",
                 starchOptions: [{label:"Papa",addon:5},{label:"Leqebekoane",addon:5}]
@@ -128,7 +128,7 @@ const menuData = {
             {
                 name: "Fries",
                 price: "From M15",
-                image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/fries.jpeg",
                 description: "",
                 category: "classics",
                 sizes: [
@@ -140,7 +140,7 @@ const menuData = {
             {
                 name: "Chinese Food",
                 price: "From M15",
-                image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/chinese-food.jpeg",
                 description: "",
                 category: "classics",
                 sizes: [
@@ -152,28 +152,28 @@ const menuData = {
             {
                 name: "Lekoenya",
                 price: "M2",
-                image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/lekoenya.jpg",
                 description: "",
                 category: "classics"
             },
             {
                 name: "Bread Roll",
                 price: "M10",
-                image: "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/bread-roll.jpeg",
                 description: "",
                 category: "classics"
             },
             {
                 name: "Russian",
                 price: "M8",
-                image: "https://images.unsplash.com/photo-1528736235302-52922df5c122?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/russian.jpeg",
                 description: "",
                 category: "classics"
             },
             {
                 name: "Fish",
                 price: "From M15",
-                image: "https://images.unsplash.com/photo-1544943910-4c1dc44aab44?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/fish.jpg",
                 description: "",
                 category: "classics",
                 sizes: [
@@ -192,7 +192,7 @@ const menuData = {
             {
                 name: "Coca-Cola",
                 price: "From M12",
-                image: "https://images.unsplash.com/photo-1561758033-d89a9ad46330?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/coca-cola.jpeg",
                 description: "The classic refreshing cola",
                 category: "Drinks",
                 sizes: [
@@ -201,14 +201,14 @@ const menuData = {
                     { label: "2 Litre",  price: "M28" }
                 ],
                 flavors: [
-                    { label: "Original", color: "#c8102e", emoji: "🥤" },
-                    { label: "Zero Sugar", color: "#1a1a1a", emoji: "⚫" }
+                    { label: "Original", color: "#c8102e" },
+                    { label: "Zero Sugar", color: "#1a1a1a" }
                 ]
             },
             {
                 name: "Fanta",
                 price: "From M12",
-                image: "https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/fanta.jpeg",
                 description: "Fruity and refreshing",
                 category: "Drinks",
                 sizes: [
@@ -217,16 +217,16 @@ const menuData = {
                     { label: "2 Litre",  price: "M28" }
                 ],
                 flavors: [
-                    { label: "Orange", color: "#f97316", emoji: "🍊" },
-                    { label: "Grape", color: "#7c3aed", emoji: "🍇" },
-                    { label: "Pineapple", color: "#eab308", emoji: "🍍" },
-                    { label: "Strawberry", color: "#e11d48", emoji: "🍓" }
+                    { label: "Orange", color: "#f97316" },
+                    { label: "Grape", color: "#7c3aed" },
+                    { label: "Pineapple", color: "#eab308" },
+                    { label: "Strawberry", color: "#e11d48" }
                 ]
             },
             {
                 name: "Sprite",
                 price: "From M12",
-                image: "https://images.unsplash.com/photo-1527960471264-932f39eb5846?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/sprite.jpg",
                 description: "Crisp lemon-lime refreshment",
                 category: "Drinks",
                 sizes: [
@@ -235,14 +235,14 @@ const menuData = {
                     { label: "2 Litre",  price: "M28" }
                 ],
                 flavors: [
-                    { label: "Lemon-Lime", color: "#84cc16", emoji: "🍋" },
-                    { label: "Cranberry", color: "#be123c", emoji: "🍒" }
+                    { label: "Lemon-Lime", color: "#84cc16" },
+                    { label: "Cranberry", color: "#be123c" }
                 ]
             },
             {
                 name: "Stoney Ginger Beer",
                 price: "From M12",
-                image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                image: "../assets/stoney.jpeg",
                 description: "Bold and spicy ginger kick",
                 category: "Drinks",
                 sizes: [
@@ -251,8 +251,8 @@ const menuData = {
                     { label: "2 Litre",  price: "M28" }
                 ],
                 flavors: [
-                    { label: "Original", color: "#d97706", emoji: "🫚" },
-                    { label: "Extra Bold", color: "#92400e", emoji: "🔥" }
+                    { label: "Original", color: "#d97706" },
+                    { label: "Extra Bold", color: "#92400e" }
                 ]
             }
         ]
@@ -351,13 +351,14 @@ function createMenuItem(item) {
 
     const basePrice = item.sizes ? item.sizes[0].price : item.price;
     const basePriceNum = parseInt(basePrice.replace(/\D/g, '')) || 0;
+    menuItem.dataset.basePrice = basePriceNum; // used by delegated starch handler
 
     const starchHTML = item.starchOptions ? `
         <div class="starch-selector">
             <div class="starch-btns">
                 ${item.starchOptions.map((s, i) => {
                     const starchPrice = basePriceNum + s.addon;
-                    const priceTag = s.addon > 0 ? `<span class="starch-price">M${starchPrice}</span>` : `<span class="starch-price">M${starchPrice}</span>`;
+                    const priceTag = `<span class="starch-price">M${starchPrice}</span>`;
                     return `<button class="starch-btn${i === 0 ? ' active' : ''}" data-starch="${s.label}" data-addon="${s.addon}">
                         ${s.label}${priceTag}
                     </button>`;
@@ -367,11 +368,12 @@ function createMenuItem(item) {
 
     const flavorsHTML = item.flavors ? `
         <div class="flavor-selector">
-            <hr />
+            <hr>
             <div class="flavor-btns">
                 ${item.flavors.map((f, i) => `
                     <button class="flavor-btn${i === 0 ? ' active' : ''}"
                         data-flavor="${f.label}"
+                        style="--flavor-color: ${f.color};">
                         <span class="flavor-name">${f.label}</span>
                     </button>`).join('')}
             </div>
@@ -396,41 +398,7 @@ function createMenuItem(item) {
             </div>
         `;
 
-    // Wire up size buttons
-    if (item.sizes) {
-        const priceEl = menuItem.querySelector('.price');
-        menuItem.querySelectorAll('.size-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                menuItem.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                priceEl.textContent = btn.dataset.price;
-            });
-        });
-    }
-
-    // Wire up flavor buttons
-    if (item.flavors) {
-        menuItem.querySelectorAll('.flavor-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                menuItem.querySelectorAll('.flavor-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-            });
-        });
-    }
-
-    // Wire up starch buttons — update card price on selection
-    if (item.starchOptions) {
-        const priceEl = menuItem.querySelector('.price');
-        menuItem.querySelectorAll('.starch-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                menuItem.querySelectorAll('.starch-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const addon = parseInt(btn.dataset.addon) || 0;
-                priceEl.textContent = `M${basePriceNum + addon}`;
-            });
-        });
-    }
-
+    // All button interactions handled by delegated listener in attachMenuDelegation
     return menuItem;
 }
 
@@ -451,8 +419,6 @@ function createMenuSection(categoryKey, categoryData) {
         `;
 
     const menuCategory = section.querySelector('.menu-category');
-
-    // Add items to the category
     categoryData.items.forEach(item => {
         menuCategory.appendChild(createMenuItem(item));
     });
@@ -460,14 +426,15 @@ function createMenuSection(categoryKey, categoryData) {
     return section;
 }
 
-function renderAllMenuSections() {
+// Build every menu section exactly once, then show/hide with CSS.
+// This eliminates the synchronous DOM rebuild on every tab click (the INP culprit).
+function buildAllMenuSections() {
     let menuContentContainer = document.querySelector('.menu-content-container');
     if (!menuContentContainer) {
         menuContentContainer = document.createElement('div');
         menuContentContainer.className = 'menu-content-container';
         menuContainer.appendChild(menuContentContainer);
     }
-
     menuContentContainer.innerHTML = '';
 
     Object.keys(menuData).forEach(categoryKey => {
@@ -475,50 +442,42 @@ function renderAllMenuSections() {
         menuContentContainer.appendChild(section);
     });
 
-    // Re-initialize event listeners
-    initializeMenuEventListeners();
+    // Wire all interactive listeners once via delegation
+    attachMenuDelegation(menuContentContainer);
     initLightbox();
 }
 
+// Legacy alias kept so any surviving call still works
+function renderAllMenuSections() { buildAllMenuSections(); }
+
 function filterMenuByCategory(category) {
-    let menuContentContainer = document.querySelector('.menu-content-container');
-    if (!menuContentContainer) {
-        menuContentContainer = document.createElement('div');
-        menuContentContainer.className = 'menu-content-container';
-        menuContainer.appendChild(menuContentContainer);
-    }
-
-    menuContentContainer.innerHTML = '';
-
-    if (category === 'all') {
-        renderAllMenuSections();
-    } else if (menuData[category]) {
-        const section = createMenuSection(category, menuData[category]);
-        menuContentContainer.appendChild(section);
-        initializeMenuEventListeners();
-        initLightbox();
-    }
+    // Immediately update tab active state so the UI feels instant
+    const sections = document.querySelectorAll('.menu-section');
+    sections.forEach(sec => {
+        if (category === 'all' || sec.id === `${category}-section`) {
+            sec.style.display = '';
+        } else {
+            sec.style.display = 'none';
+        }
+    });
 }
 
-function initializeOrderModal(itemName, priceText) {
+function initializeOrderModal(itemName, priceText, flavorText) {
     currentItem.name = itemName;
     currentItem.basePrice = parsePrice(priceText);
     currentItem.price = priceText;
+    currentItem.flavor = flavorText || null;
 
-    // Update modal
     modalItemName.textContent = itemName;
     modalItemPrice.textContent = priceText;
     modalItemPrice.classList.remove('has-quantity');
 
-    // Update summary
     summaryItemName.textContent = itemName;
     summaryUnitPrice.textContent = priceText;
 
-    // Reset quantity
     orderQuantity.value = 1;
     updateTotalPrice();
 
-    // Reset form
     orderForm.reset();
 }
 
@@ -529,7 +488,6 @@ function updateTotalPrice() {
     summaryQuantity.textContent = quantity;
     summaryTotalPrice.textContent = formatPrice(total);
 
-    // Update header price to reflect running total
     if (quantity > 1) {
         modalItemPrice.textContent = `${formatPrice(currentItem.basePrice)} × ${quantity} = ${formatPrice(total)}`;
         modalItemPrice.classList.add('has-quantity');
@@ -551,11 +509,9 @@ function closeSuccessModal() {
 
 function updateCarousel() {
     carouselSlides.style.transform = `translateX(-${currentSlide * 100}%)`;
-
     carouselDots.forEach((dot, index) => {
         dot.classList.toggle('active', index === currentSlide);
     });
-
     currentSlideEl.textContent = currentSlide + 1;
 }
 
@@ -580,9 +536,7 @@ function startAutoPlay() {
 }
 
 function stopAutoPlay() {
-    if (slideInterval) {
-        clearInterval(slideInterval);
-    }
+    if (slideInterval) clearInterval(slideInterval);
 }
 
 function enableDarkMode() {
@@ -598,57 +552,43 @@ function disableDarkMode() {
     darkModeToggle.classList.remove('active');
     darkModeIcon.className = 'fas fa-moon';
     darkModeText.textContent = 'Dark Mode';
-    localStorage.setItem('theme', 'light-manual'); // 'light-manual' = user explicitly chose light
+    localStorage.setItem('theme', 'light-manual');
 }
 
 function collectMenuImages() {
     allMenuImages = [];
     const menuItemImages = document.querySelectorAll('.menu-item-image img');
-
     menuItemImages.forEach((img, index) => {
         const menuItem = img.closest('.menu-item-simple');
         const itemName = menuItem.querySelector('h4').textContent;
-        const imgSrc = img.getAttribute('src');
-        const altText = img.getAttribute('alt') || itemName;
-
         allMenuImages.push({
-            src: imgSrc,
-            alt: altText,
+            src: img.getAttribute('src'),
+            alt: img.getAttribute('alt') || itemName,
             caption: itemName,
-            index: index
+            index
         });
     });
 }
 
 function openLightbox(imageIndex) {
     if (!allMenuImages[imageIndex]) return;
-
     currentImageIndex = imageIndex;
     const image = allMenuImages[imageIndex];
 
-    // Show loading state
     lightboxImage.style.display = 'none';
     lightboxCaption.textContent = 'Loading...';
-
-    // Set image
     lightboxImage.src = image.src;
     lightboxImage.alt = image.alt;
 
-    // When image loads
     lightboxImage.onload = function () {
         lightboxImage.style.display = 'block';
         lightboxCaption.textContent = image.caption;
-
-        // Show lightbox
         imageLightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
-
-        // Reset zoom
         lightboxContent.classList.remove('zoomed');
         lightboxImage.style.transform = 'scale(1)';
     };
 
-    // Handle image load error
     lightboxImage.onerror = function () {
         lightboxCaption.textContent = 'Failed to load image';
         lightboxImage.style.display = 'block';
@@ -660,8 +600,6 @@ function openLightbox(imageIndex) {
 function closeLightbox() {
     imageLightbox.classList.remove('active');
     document.body.style.overflow = '';
-
-    // Reset zoom
     lightboxContent.classList.remove('zoomed');
     lightboxImage.style.transform = 'scale(1)';
 }
@@ -678,11 +616,9 @@ function prevImage() {
 
 function toggleZoom() {
     if (lightboxContent.classList.contains('zoomed')) {
-        // Zoom out
         lightboxContent.classList.remove('zoomed');
         lightboxImage.style.transform = 'scale(1)';
     } else {
-        // Zoom in
         lightboxContent.classList.add('zoomed');
         lightboxImage.style.transform = 'scale(1.5)';
     }
@@ -690,100 +626,162 @@ function toggleZoom() {
 
 function initLightbox() {
     collectMenuImages();
-
-    document.querySelectorAll('.menu-item-image').forEach((container, index) => {
-        container.style.cursor = 'pointer';
-        container.addEventListener('click', (e) => {
-            e.stopPropagation();
-            openLightbox(index);
-        });
-    });
-
-    document.querySelectorAll('.menu-item-image img').forEach((img, index) => {
-        img.style.cursor = 'pointer';
-        img.addEventListener('click', (e) => {
-            e.stopPropagation();
-            openLightbox(index);
-        });
-    });
+    // Lightbox clicks handled by delegation in attachMenuDelegation — nothing to attach here
 }
 
-function initializeMenuEventListeners() {
-    document.querySelectorAll('.orderBtn').forEach(button => {
-        button.addEventListener('click', function () {
-            const menuItem = this.closest('.menu-item-simple');
+// Single delegated listener on the container — O(1) listeners regardless of item count
+function attachMenuDelegation(container) {
+    container.addEventListener('click', function (e) {
+        // ── Order button ──
+        const orderBtn = e.target.closest('.orderBtn');
+        if (orderBtn) {
+            const menuItem = orderBtn.closest('.menu-item-simple');
             const itemName  = menuItem.querySelector('h4').textContent;
             const itemPrice = menuItem.querySelector('.price').textContent;
 
             const activeSize   = menuItem.querySelector('.size-btn.active');
             const activeStarch = menuItem.querySelector('.starch-btn.active');
+            const activeFlavor = menuItem.querySelector('.flavor-btn.active');
 
             let displayName = itemName;
-            if (activeSize)   displayName += ` (${activeSize.dataset.label})`;
+            if (activeFlavor) displayName += ` (${activeFlavor.dataset.flavor})`;
+            if (activeSize)   displayName += ` - ${activeSize.dataset.label}`;
             if (activeStarch) displayName += ` + ${activeStarch.dataset.starch}`;
 
-            initializeOrderModal(displayName, itemPrice);
-
+            initializeOrderModal(displayName, itemPrice, activeFlavor ? activeFlavor.dataset.flavor : null);
             orderModal.classList.add('active');
             document.body.style.overflow = 'hidden';
 
-            this.classList.add('clicked');
-            setTimeout(() => this.classList.remove('clicked'), 500);
-        });
+            orderBtn.classList.add('clicked');
+            setTimeout(() => orderBtn.classList.remove('clicked'), 500);
+            return;
+        }
+
+        // ── Size button ──
+        const sizeBtn = e.target.closest('.size-btn');
+        if (sizeBtn) {
+            const selector = sizeBtn.closest('.size-selector');
+            selector.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+            sizeBtn.classList.add('active');
+            const menuItem = sizeBtn.closest('.menu-item-simple');
+            menuItem.querySelector('.price').textContent = sizeBtn.dataset.price;
+            return;
+        }
+
+        // ── Flavor button ──
+        const flavorBtn = e.target.closest('.flavor-btn');
+        if (flavorBtn) {
+            const selector = flavorBtn.closest('.flavor-selector');
+            selector.querySelectorAll('.flavor-btn').forEach(b => b.classList.remove('active'));
+            flavorBtn.classList.add('active');
+            return;
+        }
+
+        // ── Starch button ──
+        const starchBtn = e.target.closest('.starch-btn');
+        if (starchBtn) {
+            const selector = starchBtn.closest('.starch-selector');
+            selector.querySelectorAll('.starch-btn').forEach(b => b.classList.remove('active'));
+            starchBtn.classList.add('active');
+            const menuItem = starchBtn.closest('.menu-item-simple');
+            const basePriceNum = parseInt(menuItem.querySelector('.price').textContent.replace(/\D/g, '')) || 0;
+            // Recalculate from the item's base (stored on first starch btn dataset isn't reliable after size change)
+            // Instead read from all starch btns to find base = price when addon=0 isn't available,
+            // so store base on the menu item element itself
+            const base = parseInt(menuItem.dataset.basePrice) || basePriceNum;
+            const addon = parseInt(starchBtn.dataset.addon) || 0;
+            menuItem.querySelector('.price').textContent = `M${base + addon}`;
+            return;
+        }
+
+        // ── Image / lightbox ──
+        const imgContainer = e.target.closest('.menu-item-image');
+        if (imgContainer) {
+            e.stopPropagation();
+            const allContainers = Array.from(document.querySelectorAll('.menu-item-image'));
+            openLightbox(allContainers.indexOf(imgContainer));
+            return;
+        }
     });
 }
+
+// Kept so legacy calls in filterMenuByCategory path don't break
+function initializeMenuEventListeners() { /* delegation handles everything */ }
 
 function initializeTabListeners() {
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
+            // Step 1 — update button state synchronously so paint happens instantly
             tabBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
-            const tabToShow = btn.getAttribute('data-tab');
-            filterMenuByCategory(tabToShow);
+            // Step 2 — defer the section show/hide until after the browser paints
+            requestAnimationFrame(() => {
+                filterMenuByCategory(btn.getAttribute('data-tab'));
+            });
         });
     });
 }
 
 function initializeCarouselListeners() {
-    prevBtn.addEventListener('click', () => {
-        prevSlide();
-        startAutoPlay();
-    });
-
-    nextBtn.addEventListener('click', () => {
-        nextSlide();
-        startAutoPlay();
-    });
-
+    prevBtn.addEventListener('click', () => { prevSlide(); startAutoPlay(); });
+    nextBtn.addEventListener('click', () => { nextSlide(); startAutoPlay(); });
     carouselDots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            goToSlide(index);
-            startAutoPlay();
-        });
+        dot.addEventListener('click', () => { goToSlide(index); startAutoPlay(); });
     });
-
-    // Pause auto-play on hover
     const carousel = document.querySelector('.hero-carousel');
     carousel.addEventListener('mouseenter', stopAutoPlay);
     carousel.addEventListener('mouseleave', startAutoPlay);
 }
 
+// ─── EmailJS order notification ──────────────────────────────────────────────
+// Setup (free, no backend needed — works from any static site):
+//  1. Sign up at https://www.emailjs.com
+//  2. Add Gmail as an Email Service → copy the Service ID
+//  3. Create an Email Template using the variables listed below → copy Template ID
+//  4. Account → General → copy your Public Key
+//  Then paste the three values below.
+//
+// Template variables to use in your EmailJS template:
+//   {{order_number}}  {{timestamp}}  {{customer_name}}  {{customer_phone}}
+//   {{item}}  {{quantity}}  {{total}}  {{special_instructions}}  {{to_email}}
+// ─────────────────────────────────────────────────────────────────────────────
+const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_abc123'
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xyz789'
+const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. 'abcDEFghiJKL'
+
+async function sendOrderEmail(order) {
+    try {
+        const result = await emailjs.send(
+            EMAILJS_SERVICE_ID,
+            EMAILJS_TEMPLATE_ID,
+            {
+                to_email:             'topgrilllesotho@gmail.com',
+                order_number:         order.orderNumber,
+                timestamp:            order.timestamp,
+                customer_name:        order.customerName,
+                customer_phone:       order.customerPhone,
+                item:                 order.item,
+                quantity:             order.quantity,
+                total:                order.total,
+                special_instructions: order.specialInstructions || 'None'
+            },
+            EMAILJS_PUBLIC_KEY
+        );
+        console.log('Order email sent:', result.text);
+    } catch (err) {
+        console.warn('Email send failed (order still recorded):', err);
+    }
+}
+
 function initializeFormListeners() {
     increaseQty.addEventListener('click', function () {
         const current = parseInt(orderQuantity.value) || 1;
-        if (current < 10) {
-            orderQuantity.value = current + 1;
-            updateTotalPrice();
-        }
+        if (current < 10) { orderQuantity.value = current + 1; updateTotalPrice(); }
     });
 
     decreaseQty.addEventListener('click', function () {
         const current = parseInt(orderQuantity.value) || 1;
-        if (current > 1) {
-            orderQuantity.value = current - 1;
-            updateTotalPrice();
-        }
+        if (current > 1) { orderQuantity.value = current - 1; updateTotalPrice(); }
     });
 
     orderQuantity.addEventListener('input', function () {
@@ -794,7 +792,6 @@ function initializeFormListeners() {
         updateTotalPrice();
     });
 
-    // Order form submission
     orderForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
@@ -804,120 +801,84 @@ function initializeFormListeners() {
         const quantity = parseInt(orderQuantity.value) || 1;
         const specialInstructions = document.getElementById('specialInstructions').value.trim();
 
-        // Simple validation
         if (!customerName || !customerPhone) {
             alert('Please fill in your name and phone number.');
             return;
         }
-
         if (customerPhone.replace(/\D/g, '').length < 8) {
             alert('Please enter a valid phone number.');
             return;
         }
 
-        // Show loading state
         submitBtn.classList.add('loading');
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending order...';
 
-        // Simulate API call delay
-        setTimeout(() => {
-            // Generate order details
-            const orderNumber = generateOrderNumber();
-            const total = currentItem.basePrice * quantity;
+        const orderNumber = generateOrderNumber();
+        const total = currentItem.basePrice * quantity;
+        const timestamp = new Date().toLocaleString('en-ZA', { timeZone: 'Africa/Johannesburg' });
 
-            // Update success modal
+        const orderDetails = {
+            orderNumber,
+            item: currentItem.name,
+            quantity,
+            total: formatPrice(total),
+            customerName,
+            customerPhone,
+            specialInstructions,
+            timestamp
+        };
+
+        console.log('New Order:', orderDetails);
+
+        sendOrderEmail(orderDetails).finally(() => {
             successOrderNumber.textContent = orderNumber;
             successItemName.textContent = `${currentItem.name} × ${quantity}`;
             successQuantity.textContent = quantity;
             successTotalPrice.textContent = formatPrice(total);
             successPhone.textContent = customerPhone;
 
-            // Close order modal and show success
             orderModal.classList.remove('active');
             successModal.classList.add('active');
 
-            // Reset form and button
             submitBtn.classList.remove('loading');
             submitBtn.disabled = false;
             submitBtn.innerHTML = '<i class="fas fa-shopping-cart"></i> Place Order';
-
-            // Log order to console
-            console.log('New Order:', {
-                orderNumber,
-                item: currentItem.name,
-                quantity,
-                total: formatPrice(total),
-                customerName,
-                customerPhone,
-                specialInstructions,
-                timestamp: new Date().toISOString()
-            });
-        }, 1500);
+        });
     });
 
-    // Modal close buttons
     closeModal.addEventListener('click', closeOrderModal);
     cancelOrderBtn.addEventListener('click', closeOrderModal);
     closeSuccessBtn.addEventListener('click', closeSuccessModal);
 
-    // Close modals when clicking outside
     orderModal.addEventListener('click', function (e) {
-        if (e.target === this) {
-            closeOrderModal();
-        }
+        if (e.target === this) closeOrderModal();
     });
-
     successModal.addEventListener('click', function (e) {
-        if (e.target === this) {
-            closeSuccessModal();
-        }
+        if (e.target === this) closeSuccessModal();
     });
 
-    // Phone input formatting
     const phoneInput = document.getElementById('customerPhone');
     phoneInput.addEventListener('input', function () {
         let value = this.value.replace(/\D/g, '');
-        if (value.length > 0) {
-            value = value.match(/.{1,3}/g).join(' ');
-        }
+        if (value.length > 0) value = value.match(/.{1,3}/g).join(' ');
         this.value = value;
     });
 }
 
 function initializeLightboxListeners() {
     lightboxClose.addEventListener('click', closeLightbox);
-
-    prevLightbox.addEventListener('click', (e) => {
-        e.stopPropagation();
-        prevImage();
-    });
-
-    nextLightbox.addEventListener('click', (e) => {
-        e.stopPropagation();
-        nextImage();
-    });
-
-    // Close lightbox when clicking outside
-    imageLightbox.addEventListener('click', (e) => {
-        if (e.target === imageLightbox) {
-            closeLightbox();
-        }
-    });
-
-    // Double click to zoom
+    prevLightbox.addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
+    nextLightbox.addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
+    imageLightbox.addEventListener('click', (e) => { if (e.target === imageLightbox) closeLightbox(); });
     lightboxImage.addEventListener('dblclick', toggleZoom);
 
-    // For mobile: double tap to zoom
     let tapCount = 0;
     let tapTimer;
     lightboxImage.addEventListener('touchstart', (e) => {
         tapCount++;
-
         if (tapCount === 1) {
-            tapTimer = setTimeout(() => {
-                tapCount = 0;
-            }, 300);
+            tapTimer = setTimeout(() => { tapCount = 0; }, 300);
         } else if (tapCount === 2) {
             clearTimeout(tapTimer);
             tapCount = 0;
@@ -928,52 +889,33 @@ function initializeLightboxListeners() {
 }
 
 function initializeNavigationListeners() {
-    mobileMenuBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
+    mobileMenuBtn.addEventListener('click', () => { navMenu.classList.toggle('active'); });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (event) => {
         const isClickInsideMenu = navMenu.contains(event.target);
         const isClickOnMenuButton = mobileMenuBtn.contains(event.target);
-
         if (navMenu.classList.contains('active') && !isClickInsideMenu && !isClickOnMenuButton) {
             navMenu.classList.remove('active');
         }
     });
 
-    // Smooth scrolling for navigation links
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-
             const targetId = this.getAttribute('href');
             if (targetId === '#home') {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
                 const targetElement = document.querySelector(targetId);
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
             }
-
             navMenu.classList.remove('active');
         });
     });
 
-    // Close menu on scroll
     window.addEventListener('scroll', () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (navMenu.classList.contains('active')) {
-            navMenu.classList.remove('active');
-        }
-
-        // Header scroll effect
+        if (navMenu.classList.contains('active')) navMenu.classList.remove('active');
         const header = document.querySelector('header');
         if (scrollTop > 100) {
             header.style.padding = '15px 0';
@@ -992,7 +934,6 @@ function initializeDarkMode() {
     if (savedTheme === 'dark' || (!savedTheme && prefersDarkScheme.matches)) {
         enableDarkMode();
     }
-    // 'light-manual' means user deliberately switched to light — respect that, don't override
 
     darkModeToggle.addEventListener('click', () => {
         if (document.body.classList.contains('dark-mode')) {
@@ -1002,44 +943,26 @@ function initializeDarkMode() {
         }
     });
 
-    // Follow system changes in real time — but only if user hasn't manually chosen light
     prefersDarkScheme.addListener((e) => {
         const current = localStorage.getItem('theme');
-        if (current === 'light-manual') return; // user chose light — don't override
-        if (e.matches) {
-            enableDarkMode();
-        } else {
-            disableDarkMode();
-        }
+        if (current === 'light-manual') return;
+        if (e.matches) { enableDarkMode(); } else { disableDarkMode(); }
     });
 }
 
 function initializeKeyboardListeners() {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') {
-            if (imageLightbox.classList.contains('active')) {
-                prevImage();
-            } else {
-                prevSlide();
-                startAutoPlay();
-            }
+            if (imageLightbox.classList.contains('active')) { prevImage(); }
+            else { prevSlide(); startAutoPlay(); }
         } else if (e.key === 'ArrowRight') {
-            if (imageLightbox.classList.contains('active')) {
-                nextImage();
-            } else {
-                nextSlide();
-                startAutoPlay();
-            }
+            if (imageLightbox.classList.contains('active')) { nextImage(); }
+            else { nextSlide(); startAutoPlay(); }
         } else if (e.key === 'Escape') {
-            if (orderModal.classList.contains('active')) {
-                closeOrderModal();
-            } else if (successModal.classList.contains('active')) {
-                closeSuccessModal();
-            } else if (imageLightbox.classList.contains('active')) {
-                closeLightbox();
-            }
+            if (orderModal.classList.contains('active')) closeOrderModal();
+            else if (successModal.classList.contains('active')) closeSuccessModal();
+            else if (imageLightbox.classList.contains('active')) closeLightbox();
         } else if (e.key === ' ' && imageLightbox.classList.contains('active')) {
-            // Space to toggle zoom
             toggleZoom();
             e.preventDefault();
         }
@@ -1047,7 +970,6 @@ function initializeKeyboardListeners() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Remove existing menu content
     const existingMenuContent = document.querySelectorAll('.menu-section, .all-menu-content, .tab-content-section');
     existingMenuContent.forEach(el => el.remove());
 
@@ -1059,37 +981,26 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeLightboxListeners();
     initializeKeyboardListeners();
 
-    // Initialize carousel
     const totalSlides = document.querySelectorAll('.carousel-slide').length;
     totalSlidesEl.textContent = totalSlides;
     updateCarousel();
     startAutoPlay();
 
-    // Set initial active tab and render menu
     const allBtn = document.querySelector('.tab-btn[data-tab="all"]');
-    if (allBtn) {
-        allBtn.classList.add('active');
-    }
+    if (allBtn) allBtn.classList.add('active');
     renderAllMenuSections();
 
-    // Check auto-play on mobile
     function checkAutoPlay() {
+        const autoPlayIndicator = document.querySelector('.carousel-auto-play');
         if (window.innerWidth <= 480) {
             stopAutoPlay();
-            const autoPlayIndicator = document.querySelector('.carousel-auto-play');
-            if (autoPlayIndicator) {
-                autoPlayIndicator.style.display = 'none';
-            }
+            if (autoPlayIndicator) autoPlayIndicator.style.display = 'none';
         } else {
             startAutoPlay();
-            const autoPlayIndicator = document.querySelector('.carousel-auto-play');
-            if (autoPlayIndicator) {
-                autoPlayIndicator.style.display = 'flex';
-            }
+            if (autoPlayIndicator) autoPlayIndicator.style.display = 'flex';
         }
     }
 
-    // Check on load and resize
     window.addEventListener('load', checkAutoPlay);
     window.addEventListener('resize', checkAutoPlay);
     checkAutoPlay();
