@@ -47,18 +47,18 @@ const menuData = {
         subtitle: "Served with papa and moroho/chakalaka",
         items: [
             {
-                name: "Wors",
-                price: "M30",
-                image: "../assets/lunch1.jpeg",
-                description: "Traditional South African sausage with sides",
+                name: "Chicken Quarter Leg",
+                price: "M40",
+                image: "../assets/lunch2.jpeg",
+                description: "Juicy chicken portions with traditional sides",
                 category: "Lunch",
                 starchOptions: [{label:"Papa",addon:5},{label:"Samp",addon:10},{label:"Rice",addon:10},{label:"Leqebekoane",addon:5}]
             },
             {
-                name: "Chicken",
-                price: "M35",
+                name: "Chicken Wings",
+                price: "M40",
                 image: "../assets/lunch2.jpeg",
-                description: "Juicy chicken portions with traditional sides",
+                description: "2 hot wings and salad",
                 category: "Lunch",
                 starchOptions: [{label:"Papa",addon:5},{label:"Samp",addon:10},{label:"Rice",addon:10},{label:"Leqebekoane",addon:5}]
             },
@@ -151,7 +151,7 @@ const menuData = {
             },
             {
                 name: "Lekoenya",
-                price: "M2",
+                price: "M1",
                 image: "../assets/lekoenya.jpg",
                 description: "",
                 category: "classics"
@@ -191,14 +191,14 @@ const menuData = {
         items: [
             {
                 name: "Coca-Cola",
-                price: "From M12",
+                price: "From M15",
                 image: "../assets/coca-cola.jpeg",
                 description: "The classic refreshing cola",
                 category: "Drinks",
                 sizes: [
-                    { label: "500ml",  price: "M12" },
-                    { label: "1 Litre", price: "M18" },
-                    { label: "2 Litre",  price: "M28" }
+                    { label: "500ml",  price: "M15" },
+                    { label: "1 Litre", price: "M20" },
+                    { label: "2 Litre",  price: "M30" }
                 ],
                 flavors: [
                     { label: "Original", color: "#c8102e" },
@@ -207,13 +207,13 @@ const menuData = {
             },
             {
                 name: "Fanta",
-                price: "From M12",
+                price: "From M15",
                 image: "../assets/fanta.jpeg",
                 description: "Fruity and refreshing",
                 category: "Drinks",
                 sizes: [
-                    { label: "500ml",  price: "M12" },
-                    { label: "1 Litre", price: "M18" },
+                    { label: "500ml",  price: "M15" },
+                    { label: "1 Litre", price: "M20" },
                     { label: "2 Litre",  price: "M28" }
                 ],
                 flavors: [
@@ -225,13 +225,13 @@ const menuData = {
             },
             {
                 name: "Sprite",
-                price: "From M12",
+                price: "From 15",
                 image: "../assets/sprite.jpeg",
                 description: "Crisp lemon-lime refreshment",
                 category: "Drinks",
                 sizes: [
-                    { label: "500ml",  price: "M12" },
-                    { label: "1 Litre", price: "M18" },
+                    { label: "500ml",  price: "M15" },
+                    { label: "1 Litre", price: "M20" },
                     { label: "2 Litre",  price: "M28" }
                 ],
                 flavors: [
@@ -240,15 +240,29 @@ const menuData = {
                 ]
             },
             {
+                name: "Red Bull",
+                price: "25",
+                image: "../assets/red-bull.jpeg",
+                description: "Crisp lemon-lime refreshment",
+                category: "Drinks",
+            },
+            {
+                name: "Powerate",
+                price: "19",
+                image: "../assets/powerate.jpeg",
+                description: "Crisp lemon-lime refreshment",
+                category: "Drinks",
+            },
+            {
                 name: "Stoney Ginger Beer",
-                price: "From M12",
+                price: "From 15",
                 image: "../assets/stoney.jpeg",
                 description: "Bold and spicy ginger kick",
                 category: "Drinks",
                 sizes: [
-                    { label: "500ml",  price: "M12" },
-                    { label: "1 Litre", price: "M18" },
-                    { label: "2 Litre",  price: "M28" }
+                    { label: "500ml",  price: "M15" },
+                    { label: "1 Litre", price: "M20" },
+                    { label: "2 Litre",  price: "M30" }
                 ],
                 flavors: [
                     { label: "Original", color: "#d97706" },
@@ -746,7 +760,7 @@ function initializeCarouselListeners() {
 //   {{item}}  {{quantity}}  {{total}}  {{special_instructions}}  {{to_email}}
 // ─────────────────────────────────────────────────────────────────────────────
 const EMAILJS_SERVICE_ID  = 'service_zb4l9h9';   // e.g. 'service_abc123'
-const EMAILJS_TEMPLATE_ID = 'template_1nojh8g';  // e.g. 'template_xyz789'
+const EMAILJS_TEMPLATE_ID = 'template_89n8r6r';  // e.g. 'template_xyz789'
 const EMAILJS_PUBLIC_KEY  = 'MOqc3iPWP82ABDWFy';   // e.g. 'abcDEFghiJKL'
 
 async function sendOrderEmail(order) {
