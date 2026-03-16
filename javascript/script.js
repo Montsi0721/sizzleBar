@@ -745,9 +745,9 @@ function initializeCarouselListeners() {
 //   {{order_number}}  {{timestamp}}  {{customer_name}}  {{customer_phone}}
 //   {{item}}  {{quantity}}  {{total}}  {{special_instructions}}  {{to_email}}
 // ─────────────────────────────────────────────────────────────────────────────
-const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_abc123'
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xyz789'
-const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. 'abcDEFghiJKL'
+const EMAILJS_SERVICE_ID  = 'service_zb4l9h9';   // e.g. 'service_abc123'
+const EMAILJS_TEMPLATE_ID = 'template_1nojh8g';  // e.g. 'template_xyz789'
+const EMAILJS_PUBLIC_KEY  = 'MOqc3iPWP82ABDWFy';   // e.g. 'abcDEFghiJKL'
 
 async function sendOrderEmail(order) {
     try {
@@ -755,7 +755,7 @@ async function sendOrderEmail(order) {
             EMAILJS_SERVICE_ID,
             EMAILJS_TEMPLATE_ID,
             {
-                to_email:             'topgrilllesotho@gmail.com',
+                to_email:             'montsikhotso@gmail.com',
                 order_number:         order.orderNumber,
                 timestamp:            order.timestamp,
                 customer_name:        order.customerName,
