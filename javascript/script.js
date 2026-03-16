@@ -226,7 +226,7 @@ const menuData = {
             {
                 name: "Sprite",
                 price: "From M12",
-                image: "../assets/fanta.jpeg",
+                image: "../assets/sprite.jpeg",
                 description: "Crisp lemon-lime refreshment",
                 category: "Drinks",
                 sizes: [
