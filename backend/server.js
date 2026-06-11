@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
+// const rateLimit = require('express-rate-limit');
 const path = require('path');
 const fs = require('fs');
 const menuRoutes = require('./routes/menu');
@@ -26,9 +26,15 @@ app.use('/assets', express.static(assetsDir));
 // Security middleware
 app.use(helmet());
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://127.0.0.1:5500', 'http://localhost:5500'],
+    origin: ['http://localhost:3000', 'http://127.0.0.1:5500', 'http://localhost:5500', 'https://sizzle-bar.onrender.com/'],
     credentials: true
 }));
+
+// fix for Render / Heroku / Nginx proxies
+app.set('trust proxy', 1);
+
+// rate limiter AFTER trust proxy
+const rateLimit = require('express-rate-limit');
 
 // Rate limiting
 const limiter = rateLimit({
