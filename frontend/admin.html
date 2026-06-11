@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Grill | Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        /* ── Admin-specific styles ── */
+
+        .login-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            padding-top: 140px;
+        }
+
+        .login-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 50px 40px;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        .login-card .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--dark);
+            letter-spacing: -1px;
+            margin-bottom: 4px;
+        }
+
+        .login-card .logo span {
+            background: linear-gradient(180deg, #fff5a0 0%, #ffb700 30%, #ff3c00 65%, #c8102e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .login-card .tagline {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .login-card h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+        }
+
+        .login-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+
+        .login-card input {
+            width: 100%;
+            padding: 14px 18px;
+            margin-bottom: 15px;
+            border: 2px solid #e8e0d8;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            background: var(--light);
+            transition: border-color 0.3s;
+        }
+
+        .login-card input:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        .login-card .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 5px;
+            letter-spacing: 1px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .login-card .login-btn:hover {
+            background: #a50d24;
+            transform: translateY(-2px);
+        }
+
+        .dashboard-page {
+            display: none;
+            padding-top: 130px;
+            padding-bottom: 60px;
+            min-height: 100vh;
+        }
+
+        .admin-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .stats-bar {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            flex: 1;
+            min-width: 160px;
+        }
+
+        .stat-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        .stat-card:first-child .stat-icon { color: var(--primary); }
+        .stat-card:nth-child(2) .stat-icon { color: var(--secondary); }
+
+        .stat-info .number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--dark);
+            line-height: 1;
+        }
+
+        .stat-info .label {
+            font-size: 0.8rem;
+            color: var(--gray);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .toolbar {
+            background: #fff;
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        .toolbar-btn {
+            padding: 11px 22px;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-add {
+            background: var(--primary);
+            color: #fff;
+        }
+        .btn-add:hover { background: #a50d24; transform: translateY(-2px); }
+
+        .btn-refresh {
+            background: var(--secondary);
+            color: var(--dark);
+        }
+        .btn-refresh:hover { background: #e69500; transform: translateY(-2px); }
+
+        .btn-logout {
+            background: var(--dark);
+            color: #fff;
+        }
+        .btn-logout:hover { background: #333; transform: translateY(-2px); }
+
+        .btn-change-password {
+            background: #4a5568;
+            color: #fff;
+        }
+        .btn-change-password:hover { background: #2d3748; transform: translateY(-2px); }
+
+        .search-area {
+            flex: 1;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-area input,
+        .search-area select {
+            padding: 11px 16px;
+            border: 2px solid #e8e0d8;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            background: var(--light);
+            transition: border-color 0.3s;
+        }
+
+        .search-area input { flex: 1; }
+
+        .search-area input:focus,
+        .search-area select:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.14);
+        }
+
+        .menu-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f0e8e0;
+        }
+
+        .menu-card-content {
+            padding: 20px;
+        }
+
+        .menu-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .menu-card-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .menu-card-category {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .menu-card-desc {
+            color: var(--gray);
+            font-size: 0.88rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .menu-card-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .menu-card-actions button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+
+        .btn-edit {
+            background: var(--secondary);
+            color: var(--dark);
+        }
+        .btn-edit:hover { background: #e69500; }
+
+        .btn-delete {
+            background: var(--primary);
+            color: #fff;
+        }
+        .btn-delete:hover { background: #a50d24; }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .loading.active { display: block; }
+
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid #e8e0d8;
+            border-top-color: var(--secondary);
+            border-radius: 50%;
+            animation: spin 0.9s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px;
+            background: #fff;
+            border-radius: 16px;
+            grid-column: 1 / -1;
+        }
+
+        .empty-state i {
+            font-size: 3.5rem;
+            color: #ddd;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .empty-state p { color: #999; font-size: 1.05rem; }
+
+        /* Modal Styles */
+        .item-modal, .password-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(26,26,26,0.75);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .item-modal.active, .password-modal.active { display: flex; }
+
+        .item-modal-content, .password-modal-content {
+            background: #fff;
+            border-radius: 20px;
+            max-width: 620px;
+            width: 100%;
+            max-height: 88vh;
+            overflow-y: auto;
+            padding: 35px;
+            position: relative;
+            scrollbar-width: none;
+        }
+
+        .password-modal-content {
+            max-width: 450px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 18px;
+            border-bottom: 2px solid #f0e8e0;
+        }
+
+        .modal-header h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+
+        .close-modal-btn {
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: #aaa;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+
+        .close-modal-btn:hover { color: var(--primary); }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e8e0d8;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            background: var(--light);
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        .image-upload-area {
+            border: 2px dashed #e8e0d8;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 15px;
+        }
+
+        .image-upload-area:hover {
+            border-color: var(--secondary);
+            background: rgba(249, 166, 2, 0.05);
+        }
+
+        .image-upload-area.drag-over {
+            border-color: var(--primary);
+            background: rgba(200, 16, 46, 0.05);
+        }
+
+        .image-preview {
+            max-width: 100%;
+            max-height: 150px;
+            margin-top: 10px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .image-preview.active {
+            display: block;
+        }
+
+        .upload-progress {
+            display: none;
+            width: 100%;
+            height: 4px;
+            background: #e8e0d8;
+            border-radius: 2px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .upload-progress.active {
+            display: block;
+        }
+
+        .upload-progress-bar {
+            width: 0%;
+            height: 100%;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .form-actions button {
+            flex: 1;
+            padding: 13px;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+
+        .btn-modal-cancel {
+            background: #f0e8e0;
+            color: var(--gray);
+        }
+        .btn-modal-cancel:hover { background: #e0d4c8; }
+
+        .btn-modal-save {
+            background: var(--primary);
+            color: #fff;
+        }
+        .btn-modal-save:hover { background: #a50d24; transform: translateY(-2px); }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 14px 24px;
+            border-radius: 10px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.92rem;
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            animation: toastIn 0.35s ease;
+        }
+
+        .toast.success { background: #16a34a; }
+        .toast.error   { background: var(--primary); }
+        .toast.info    { background: var(--secondary); color: var(--dark); }
+
+        @keyframes toastIn {
+            from { transform: translateX(110%); opacity: 0; }
+            to   { transform: translateX(0);    opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .stats-bar { gap: 12px; }
+            .toolbar { flex-direction: column; }
+            .search-area { flex-direction: column; }
+            .menu-grid { grid-template-columns: 1fr; }
+            .form-actions { flex-direction: column; }
+            .dashboard-page { padding-top: 110px; }
+        }
+    </style>
+</head>
+<body>
+    <header style="padding: 15px 0px; background-color: rgba(26, 26, 26, 0.98);">
+        <div class="header-container">
+            <div>
+                <div class="logo">Top <span class="grill-fire">
+                    <span class="grill-text">Grill</span>
+                    <span class="flames" aria-hidden="true">
+                        <span class="flame f1"></span>
+                        <span class="flame f2"></span>
+                        <span class="flame f3"></span>
+                        <span class="flame f4"></span>
+                        <span class="flame f5"></span>
+                    </span>
+                    <span class="ember e1"></span>
+                    <span class="ember e2"></span>
+                    <span class="ember e3"></span>
+                </span></div>
+                <div class="tagline">FOOD SPECIALISTS</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">← Back to Site</a></li>
+                    <li id="adminUserLabel" style="color:#f9a602; font-weight:600; font-size:0.9rem; display:none;">
+                        <i class="fas fa-user-shield"></i> Admin
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login Page -->
+    <div id="loginPage" class="login-page">
+        <div class="login-card">
+            <div class="logo">Top <span>Grill</span></div>
+            <div class="tagline">FOOD SPECIALISTS</div>
+            <h2><i class="fas fa-lock" style="color:var(--primary); margin-right:8px;"></i>Admin Panel</h2>
+            <p>Sign in to manage the menu</p>
+            <input type="text" id="adminUsername" placeholder="Username" autocomplete="off">
+            <input type="password" id="adminPassword" placeholder="Password">
+            <button class="login-btn" id="loginBtn">
+                <i class="fas fa-sign-in-alt"></i> Sign In
+            </button>
+        </div>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="dashboardPage" class="dashboard-page">
+        <div class="admin-container">
+            <div class="stats-bar">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-utensils"></i></div>
+                    <div class="stat-info">
+                        <div class="number" id="totalItems">0</div>
+                        <div class="label">Menu Items</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-tags"></i></div>
+                    <div class="stat-info">
+                        <div class="number" id="totalCategories">0</div>
+                        <div class="label">Categories</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title" style="margin-bottom:30px;">Menu Management</h2>
+
+            <div class="toolbar">
+                <button class="toolbar-btn btn-add" id="addItemBtn">
+                    <i class="fas fa-plus"></i> Add Item
+                </button>
+                <button class="toolbar-btn btn-refresh" id="refreshBtn">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
+                <button class="toolbar-btn btn-change-password" id="changePasswordBtn">
+                    <i class="fas fa-key"></i> Change Password
+                </button>
+                <button class="toolbar-btn btn-logout" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+                <div class="search-area">
+                    <input type="text" id="searchInput" placeholder="Search menu items…">
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="BreakFast">Breakfast</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="classics">Classics</option>
+                        <option value="Drinks">Drinks</option>
+                        <option value="HotBeverages">Hot Beverages</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p style="color:var(--gray);">Loading menu items…</p>
+            </div>
+
+            <div id="menuGrid" class="menu-grid"></div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Menu Item Modal -->
+    <div id="itemModal" class="item-modal">
+        <div class="item-modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Add Menu Item</h3>
+                <button class="close-modal-btn" id="closeModalBtn">&times;</button>
+            </div>
+            <form id="itemForm">
+                <div class="form-group">
+                    <label>Item Name <span style="color:var(--primary);">*</span></label>
+                    <input type="text" id="itemName" required placeholder="e.g., Chicken Burger">
+                </div>
+
+                <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label>Price <span style="color:var(--primary);">*</span></label>
+                        <input type="text" id="itemPrice" required placeholder="e.g., M50 or From M15">
+                    </div>
+                    <div class="form-group">
+                        <label>Category <span style="color:var(--primary);">*</span></label>
+                        <select id="itemCategory" required>
+                            <option value="BreakFast">Breakfast</option>
+                            <option value="Lunch">Lunch</option>
+                            <option value="classics">Classics</option>
+                            <option value="Drinks">Drinks</option>
+                            <option value="HotBeverages">Hot Beverages</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Image <span style="color:var(--primary);">*</span></label>
+                    <div class="image-upload-area" id="imageUploadArea">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: var(--secondary);"></i>
+                        <p>Click or drag & drop to upload image</p>
+                        <input type="file" id="imageFileInput" accept="image/*" style="display: none;">
+                    </div>
+                    <input type="text" id="itemImage" placeholder="Or enter image URL directly" style="margin-top: 10px;">
+                    <div class="upload-progress" id="uploadProgress">
+                        <div class="upload-progress-bar" id="uploadProgressBar"></div>
+                    </div>
+                    <img id="imagePreview" class="image-preview" alt="Image preview">
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="itemDescription" rows="3" placeholder="Describe the menu item…"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Sizes <span style="color:var(--gray); font-weight:400;">(JSON – optional)</span></label>
+                    <textarea id="itemSizes" rows="3" placeholder='[{"label":"Small","price":"M15"},{"label":"Large","price":"M25"}]'></textarea>
+                    <small>Leave empty if no size options.</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Flavors <span style="color:var(--gray); font-weight:400;">(JSON – optional)</span></label>
+                    <textarea id="itemFlavors" rows="3" placeholder='[{"label":"Orange","color":"#f97316"},{"label":"Grape","color":"#7c3aed"}]'></textarea>
+                    <small>Leave empty if no flavor options.</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Starch Options <span style="color:var(--gray); font-weight:400;">(JSON – optional)</span></label>
+                    <textarea id="itemStarchOptions" rows="3" placeholder='[{"label":"Papa","addon":0},{"label":"Leqebekoane","addon":5}]'></textarea>
+                    <small>Leave empty if no starch options.</small>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-modal-cancel" id="cancelModalBtn">Cancel</button>
+                    <button type="submit" class="btn-modal-save">
+                        <i class="fas fa-save"></i> Save Item
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div id="passwordModal" class="password-modal">
+        <div class="password-modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-key"></i> Change Password</h3>
+                <button class="close-modal-btn" id="closePasswordModalBtn">&times;</button>
+            </div>
+            <form id="passwordForm">
+                <div class="form-group">
+                    <label>Current Password *</label>
+                    <input type="password" id="currentPassword" required placeholder="Enter current password">
+                </div>
+                <div class="form-group">
+                    <label>New Password *</label>
+                    <input type="password" id="newPassword" required placeholder="Enter new password (min 6 characters)">
+                </div>
+                <div class="form-group">
+                    <label>Confirm New Password *</label>
+                    <input type="password" id="confirmPassword" required placeholder="Confirm new password">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-modal-cancel" id="cancelPasswordBtn">Cancel</button>
+                    <button type="submit" class="btn-modal-save">
+                        <i class="fas fa-save"></i> Update Password
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        /* ── Placeholder image generator ── */
+        function makePlaceholder(label) {
+            const display = (label || 'No Image').toUpperCase();
+            let grid = '';
+            for (let x = 0; x < 400; x += 30) grid += `<line x1="${x}" y1="0" x2="${x}" y2="200" stroke="rgba(249,166,2,0.07)" stroke-width="1"/>`;
+            for (let y = 0; y < 200; y += 30) grid += `<line x1="0" y1="${y}" x2="400" y2="${y}" stroke="rgba(249,166,2,0.07)" stroke-width="1"/>`;
+            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
+  <defs>
+    <linearGradient id="fire" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#7a0000"/>
+      <stop offset="40%" stop-color="#c8102e"/>
+      <stop offset="75%" stop-color="#ff3d00"/>
+      <stop offset="100%" stop-color="#ff7a00"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="200" fill="#1a1a1a"/>
+  ${grid}
+  <g transform="translate(142,8) scale(1.8)">
+    <path fill="url(#fire)" d="M32 4 C42 14 50 24 50 38 C50 51 42 60 32 60 C22 60 14 52 14 40 C14 29 19 21 26 14 C26 24 34 28 34 36 C34 29 40 20 32 4"/>
+    <path fill="#ff6a00" d="M32 22 C37 28 41 34 41 42 C41 49 37 54 32 54 C27 54 23 50 23 43 C23 37 27 33 30 29 C30 34 34 37 34 41 C34 36 37 31 32 22"/>
+  </g>
+  <text x="200" y="152" font-family="Montserrat,sans-serif" font-weight="700" font-size="14" fill="#f9a602" text-anchor="middle" letter-spacing="3">${'TOP GRILL'}</text>
+  <text x="200" y="170" font-family="Poppins,sans-serif" font-weight="600" font-size="10" fill="rgba(255,255,255,0.38)" text-anchor="middle">${display}</text>
+</svg>`;
+            return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+        }
+
+        /* ── Config ── */
+        const API_BASE_URL = 'http://localhost:5000/api';
+        const ASSETS_BASE_URL = 'http://localhost:5000';
+        let adminToken = localStorage.getItem('adminToken');
+        let menuItems   = [];
+        let editingId   = null;
+        let _loadController = null;
+
+        /* ── DOM refs ── */
+        const loginPage       = document.getElementById('loginPage');
+        const dashboardPage   = document.getElementById('dashboardPage');
+        const adminUserLabel  = document.getElementById('adminUserLabel');
+        const menuGrid        = document.getElementById('menuGrid');
+        const loading         = document.getElementById('loading');
+        const totalItemsEl    = document.getElementById('totalItems');
+        const totalCatsEl     = document.getElementById('totalCategories');
+        const searchInput     = document.getElementById('searchInput');
+        const categoryFilter  = document.getElementById('categoryFilter');
+        const itemModal       = document.getElementById('itemModal');
+        const passwordModal   = document.getElementById('passwordModal');
+        const modalTitle      = document.getElementById('modalTitle');
+        const itemForm        = document.getElementById('itemForm');
+        const passwordForm    = document.getElementById('passwordForm');
+
+        /* ── Bootstrap ── */
+        if (adminToken) verifyToken();
+
+        /* ── Image Upload ── */
+        const imageUploadArea = document.getElementById('imageUploadArea');
+        const imageFileInput = document.getElementById('imageFileInput');
+        const itemImageInput = document.getElementById('itemImage');
+        const imagePreview = document.getElementById('imagePreview');
+        const uploadProgress = document.getElementById('uploadProgress');
+        const uploadProgressBar = document.getElementById('uploadProgressBar');
+
+        if (imageUploadArea) {
+            imageUploadArea.addEventListener('click', () => {
+                imageFileInput.click();
+            });
+
+            imageUploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                imageUploadArea.classList.add('drag-over');
+            });
+
+            imageUploadArea.addEventListener('dragleave', () => {
+                imageUploadArea.classList.remove('drag-over');
+            });
+
+            imageUploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                imageUploadArea.classList.remove('drag-over');
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    uploadImage(files[0]);
+                }
+            });
+        }
+
+        if (imageFileInput) {
+            imageFileInput.addEventListener('change', (e) => {
+                if (e.target.files.length > 0) {
+                    uploadImage(e.target.files[0]);
+                }
+            });
+        }
+
+        async function uploadImage(file) {
+            if (!adminToken) {
+                showToast('Please login first', 'error');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('image', file);
+
+            uploadProgress.classList.add('active');
+            uploadProgressBar.style.width = '0%';
+
+            try {
+                const xhr = new XMLHttpRequest();
+                xhr.upload.addEventListener('progress', (e) => {
+                    if (e.lengthComputable) {
+                        const percent = (e.loaded / e.total) * 100;
+                        uploadProgressBar.style.width = percent + '%';
+                    }
+                });
+
+                const promise = new Promise((resolve, reject) => {
+                    xhr.onload = () => {
+                        if (xhr.status === 200) {
+                            resolve(JSON.parse(xhr.responseText));
+                        } else {
+                            reject(new Error('Upload failed'));
+                        }
+                    };
+                    xhr.onerror = () => reject(new Error('Network error'));
+                    xhr.open('POST', `${API_BASE_URL}/upload/image`);
+                    xhr.setRequestHeader('Authorization', `Bearer ${adminToken}`);
+                    xhr.send(formData);
+                });
+
+                const result = await promise;
+                if (result.success) {
+                    itemImageInput.value = result.imageUrl;
+                    imagePreview.src = result.imageUrl;
+                    imagePreview.classList.add('active');
+                    showToast('Image uploaded successfully!', 'success');
+                }
+            } catch (error) {
+                console.error('Upload error:', error);
+                showToast('Failed to upload image', 'error');
+            } finally {
+                setTimeout(() => {
+                    uploadProgress.classList.remove('active');
+                }, 500);
+            }
+        }
+
+        function previewImage(url) {
+            if (url && url !== '../assets/') {
+                imagePreview.src = url;
+                imagePreview.classList.add('active');
+            } else {
+                imagePreview.classList.remove('active');
+            }
+        }
+
+        /* ── Auth ── */
+        document.getElementById('loginBtn').addEventListener('click', async () => {
+            const username = document.getElementById('adminUsername').value.trim();
+            const password = document.getElementById('adminPassword').value.trim();
+            if (!username || !password) { showToast('Please enter username and password', 'error'); return; }
+
+            try {
+                const res = await fetch(`${API_BASE_URL}/auth/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+                if (!res.ok) throw new Error('Invalid credentials');
+                const data = await res.json();
+                adminToken = data.token;
+                localStorage.setItem('adminToken', adminToken);
+                showDashboard();
+                showToast('Login successful!', 'success');
+            } catch (err) {
+                showToast('Login failed: ' + err.message, 'error');
+            }
+        });
+
+        document.getElementById('adminPassword').addEventListener('keydown', e => {
+            if (e.key === 'Enter') document.getElementById('loginBtn').click();
+        });
+
+        async function verifyToken() {
+            try {
+                const res = await fetch(`${API_BASE_URL}/auth/verify`, {
+                    headers: { 'Authorization': `Bearer ${adminToken}` }
+                });
+                res.ok ? showDashboard() : logout();
+            } catch { logout(); }
+        }
+
+        function showDashboard() {
+            loginPage.style.display    = 'none';
+            dashboardPage.style.display = 'block';
+            adminUserLabel.style.display = 'list-item';
+            loadMenuItems();
+        }
+
+        function logout() {
+            adminToken = null;
+            localStorage.removeItem('adminToken');
+            loginPage.style.display     = 'flex';
+            dashboardPage.style.display = 'none';
+            adminUserLabel.style.display = 'none';
+            document.getElementById('adminUsername').value = '';
+            document.getElementById('adminPassword').value = '';
+        }
+
+        /* ── Change Password ── */
+        document.getElementById('changePasswordBtn').addEventListener('click', () => {
+            document.getElementById('currentPassword').value = '';
+            document.getElementById('newPassword').value = '';
+            document.getElementById('confirmPassword').value = '';
+            passwordModal.classList.add('active');
+        });
+
+        document.getElementById('closePasswordModalBtn').addEventListener('click', () => {
+            passwordModal.classList.remove('active');
+        });
+
+        document.getElementById('cancelPasswordBtn').addEventListener('click', () => {
+            passwordModal.classList.remove('active');
+        });
+
+        passwordForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const currentPassword = document.getElementById('currentPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (!currentPassword || !newPassword || !confirmPassword) {
+                showToast('Please fill in all fields', 'error');
+                return;
+            }
+            
+            if (newPassword !== confirmPassword) {
+                showToast('New passwords do not match', 'error');
+                return;
+            }
+            
+            if (newPassword.length < 6) {
+                showToast('New password must be at least 6 characters', 'error');
+                return;
+            }
+            
+            try {
+                const res = await fetch(`${API_BASE_URL}/auth/change-password`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${adminToken}`
+                    },
+                    body: JSON.stringify({ currentPassword, newPassword, confirmPassword })
+                });
+                
+                if (!res.ok) {
+                    const error = await res.json();
+                    throw new Error(error.error);
+                }
+                
+                showToast('Password changed successfully!', 'success');
+                passwordModal.classList.remove('active');
+            } catch (err) {
+                showToast(err.message, 'error');
+            }
+        });
+
+        /* ── Data ── */
+        async function loadMenuItems() {
+            if (_loadController) _loadController.abort();
+            _loadController = new AbortController();
+            const signal = _loadController.signal;
+
+            loading.classList.add('active');
+            menuGrid.innerHTML = '';
+            try {
+                const res = await fetch(`${API_BASE_URL}/menu`, { signal });
+                if (!res.ok) throw new Error('Failed to load');
+                menuItems = await res.json();
+            } catch (err) {
+                if (err.name === 'AbortError') return;
+                loadSampleData();
+                showToast('Backend unavailable – showing sample data', 'info');
+            } finally {
+                if (!signal.aborted) {
+                    loading.classList.remove('active');
+                    updateStats();
+                    renderMenuItems();
+                }
+            }
+        }
+
+        function loadSampleData() {
+            menuItems = [
+                { _id:'1', name:'Breakfast Sandwich',    price:'M35', image:'https://images.unsplash.com/photo-1550507992-eb63ffee0847?w=400&q=80', description:'Hearty morning sandwich with egg & cheese', category:'BreakFast' },
+                { _id:'2', name:'Chicken Quarter Leg',   price:'M50', image:'https://images.unsplash.com/photo-1598103442097-8b74394b95c2?w=400&q=80', description:'Juicy chicken quarter with your choice of starch', category:'Lunch' },
+                { _id:'3', name:'Crispy Fries',          price:'M15', image:'https://images.unsplash.com/photo-1576107232684-1279f390859f?w=400&q=80', description:'Golden crispy fries, salted to perfection', category:'classics' },
+                { _id:'4', name:'Coca-Cola',             price:'M15', image:'https://images.unsplash.com/photo-1629203851122-3726ecdf080e?w=400&q=80', description:'Ice-cold refreshing cola', category:'Drinks' },
+                { _id:'5', name:'Cappuccino',            price:'M25', image:'https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=400&q=80', description:'Rich espresso with velvety steamed milk', category:'HotBeverages' }
+            ];
+        }
+
+        function updateStats() {
+            totalItemsEl.textContent = menuItems.length;
+            totalCatsEl.textContent  = new Set(menuItems.map(i => i.category)).size;
+        }
+
+        /* ── Render ── */
+        function renderMenuItems() {
+            let items = [...menuItems];
+
+            const term = searchInput.value.toLowerCase();
+            if (term) items = items.filter(i =>
+                i.name.toLowerCase().includes(term) ||
+                (i.description && i.description.toLowerCase().includes(term))
+            );
+
+            const cat = categoryFilter.value;
+            if (cat !== 'all') items = items.filter(i => i.category === cat);
+
+            if (items.length === 0) {
+                menuGrid.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-search"></i>
+                        <p>No menu items found</p>
+                    </div>`;
+                return;
+            }
+
+            menuGrid.innerHTML = items.map(item => `
+                <div class="menu-card">
+                    <img class="menu-card-image"
+                        src="${item.image && item.image.startsWith('http') ? item.image : ASSETS_BASE_URL + (item.image || '')}"
+                        alt="${escHtml(item.name)}"
+                        onerror="this.onerror=null; this.src=makePlaceholder(this.alt)">
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">${escHtml(item.name)}</h3>
+                        <div class="menu-card-price">${escHtml(item.price)}</div>
+                        <span class="menu-card-category">${escHtml(item.category)}</span>
+                        <p class="menu-card-desc">${escHtml(item.description || 'No description')}</p>
+                        <div class="menu-card-actions">
+                            <button class="btn-edit" onclick="editItem('${item._id}')">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                            <button class="btn-delete" onclick="deleteItem('${item._id}')">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        /* ── CRUD ── */
+        function openModal(isEdit = false) {
+            modalTitle.textContent = isEdit ? 'Edit Menu Item' : 'Add Menu Item';
+            itemModal.classList.add('active');
+        }
+
+        function closeModal() {
+            itemModal.classList.remove('active');
+            itemForm.reset();
+            imagePreview.classList.remove('active');
+            editingId = null;
+        }
+
+        async function saveItem() {
+            const payload = {
+                name:         document.getElementById('itemName').value.trim(),
+                price:        document.getElementById('itemPrice').value.trim(),
+                image:        document.getElementById('itemImage').value.trim(),
+                description:  document.getElementById('itemDescription').value.trim(),
+                category:     document.getElementById('itemCategory').value,
+                sizes:        parseJSON(document.getElementById('itemSizes').value),
+                flavors:      parseJSON(document.getElementById('itemFlavors').value),
+                starchOptions:parseJSON(document.getElementById('itemStarchOptions').value)
+            };
+
+            if (!payload.name || !payload.price || !payload.image || !payload.category) {
+                showToast('Please fill in all required fields', 'error');
+                return;
+            }
+
+            try {
+                const url    = editingId ? `${API_BASE_URL}/menu/${editingId}` : `${API_BASE_URL}/menu`;
+                const method = editingId ? 'PUT' : 'POST';
+                const res = await fetch(url, {
+                    method,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${adminToken}`
+                    },
+                    body: JSON.stringify(payload)
+                });
+                if (!res.ok) throw new Error('API error');
+                showToast(editingId ? 'Item updated!' : 'Item added!', 'success');
+                closeModal();
+                loadMenuItems();
+            } catch {
+                if (editingId) {
+                    const idx = menuItems.findIndex(i => i._id === editingId);
+                    if (idx !== -1) menuItems[idx] = { ...menuItems[idx], ...payload, _id: editingId };
+                } else {
+                    payload._id = Date.now().toString();
+                    menuItems.push(payload);
+                }
+                updateStats();
+                renderMenuItems();
+                showToast((editingId ? 'Item updated' : 'Item added') + ' locally!', 'success');
+                closeModal();
+            }
+        }
+
+        async function editItem(id) {
+            editingId = id;
+            let item = null;
+            try {
+                const res = await fetch(`${API_BASE_URL}/menu/${id}`);
+                if (res.ok) item = await res.json();
+            } catch {}
+            if (!item) item = menuItems.find(i => i._id === id);
+            if (!item) return;
+
+            document.getElementById('itemName').value         = item.name        || '';
+            document.getElementById('itemPrice').value        = item.price       || '';
+            document.getElementById('itemImage').value        = item.image       || '';
+            document.getElementById('itemDescription').value  = item.description || '';
+            document.getElementById('itemCategory').value     = item.category    || 'BreakFast';
+            document.getElementById('itemSizes').value        = item.sizes        ? JSON.stringify(item.sizes, null, 2)        : '';
+            document.getElementById('itemFlavors').value      = item.flavors      ? JSON.stringify(item.flavors, null, 2)      : '';
+            document.getElementById('itemStarchOptions').value= item.starchOptions? JSON.stringify(item.starchOptions, null, 2): '';
+            
+            previewImage(item.image);
+            openModal(true);
+        }
+
+        async function deleteItem(id) {
+            if (!confirm('Delete this menu item?')) return;
+            try {
+                const res = await fetch(`${API_BASE_URL}/menu/${id}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${adminToken}` }
+                });
+                if (!res.ok) throw new Error();
+                showToast('Item deleted!', 'success');
+                loadMenuItems();
+            } catch {
+                menuItems = menuItems.filter(i => i._id !== id);
+                updateStats();
+                renderMenuItems();
+                showToast('Item deleted locally!', 'success');
+            }
+        }
+
+        /* ── Helpers ── */
+        function parseJSON(val) {
+            if (!val || !val.trim()) return undefined;
+            try { return JSON.parse(val); } catch { return undefined; }
+        }
+
+        function escHtml(text) {
+            if (!text) return '';
+            const d = document.createElement('div');
+            d.textContent = String(text);
+            return d.innerHTML;
+        }
+
+        function showToast(msg, type = 'success') {
+            const icon = type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle';
+            const t = document.createElement('div');
+            t.className = `toast ${type}`;
+            t.innerHTML = `<i class="fas ${icon}"></i> ${msg}`;
+            document.body.appendChild(t);
+            setTimeout(() => t.remove(), 3200);
+        }
+
+        /* ── Event listeners ── */
+        document.getElementById('addItemBtn').addEventListener('click', () => {
+            editingId = null;
+            itemForm.reset();
+            imagePreview.classList.remove('active');
+            openModal(false);
+        });
+
+        document.getElementById('refreshBtn').addEventListener('click', loadMenuItems);
+        document.getElementById('logoutBtn').addEventListener('click', logout);
+        document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+        document.getElementById('cancelModalBtn').addEventListener('click', closeModal);
+
+        itemForm.addEventListener('submit', e => { e.preventDefault(); saveItem(); });
+
+        let _searchTimer = null;
+        searchInput.addEventListener('input', () => {
+            clearTimeout(_searchTimer);
+            _searchTimer = setTimeout(renderMenuItems, 180);
+        });
+        categoryFilter.addEventListener('change', renderMenuItems);
+
+        window.addEventListener('click', e => { 
+            if (e.target === itemModal) closeModal();
+            if (e.target === passwordModal) passwordModal.classList.remove('active');
+        });
+
+        /* Make global for inline onclick */
+        window.editItem   = editItem;
+        window.deleteItem = deleteItem;
+        window.makePlaceholder = makePlaceholder;
+    </script>
+</body>
+</html>

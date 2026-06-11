@@ -37,6 +37,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#menu">Menu</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="admin.html" target="_blank">Admin Panel</a></li>
                     <li class="dark-mode-toggle-container">
                         <button id="darkModeToggle" class="dark-mode-toggle">
                             <i class="fas fa-moon"></i>
@@ -128,16 +129,16 @@
             <h2 class="section-title">Our Story</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Welcome to Sizzle Bar, where we've perfected the art of the Kota. Born from a passion for
+                    <p>Welcome to Top Grill, where we've perfected the art of the Kota. Born from a passion for
                         authentic street food, we've taken this beloved local favorite and elevated it with our unique
-                        Sizzle Bar touch.</p>
+                        Top Grill touch.</p>
                     <p>Our journey began with a simple mission: to create the most delicious, satisfying Kota experience
                         possible. We start with fresh quarter loaves, hollowed out and toasted to perfection, then layer
                         them with the finest ingredients.</p>
                     <p>What sets us apart is our attention to detail. From our secret spice blends to our house-made
                         sauces, every element is crafted with care. We believe a great Kota should be a complete meal -
                         satisfying, flavorful, and memorable.</p>
-                    <p>Join us for our grand opening on December 4th, 2025, and taste why Sizzle Bar is becoming the
+                    <p>Join us for our grand opening on December 4th, 2025, and taste why Top Grill is becoming the
                         go-to destination for Kota lovers.</p>
                 </div>
                 <div class="about-image">
@@ -151,16 +152,130 @@
     <section class="menu" id="menu">
         <div class="container">
             <h2 class="section-title">Our Menu</h2>
+            <div class="menu-search-container" style="max-width: 400px; margin: 0 auto 30px;">
+                <div class="search-wrapper" style="position: relative;">
+                    <i class="fas fa-search" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--gray);"></i>
+                    <input type="text" id="menuSearchInput" placeholder="Search menu items..." 
+                        style="width: 100%; padding: 12px 15px 12px 45px; border: 2px solid #e8e0d8; border-radius: 50px; font-family: 'Poppins', sans-serif; font-size: 1rem; background: var(--light); transition: all 0.3s;">
+                </div>
+            </div>
             <div class="menu-tabs">
                 <button class="tab-btn active" data-tab="all">All</button>
                 <button class="tab-btn" data-tab="BreakFast">BreakFast</button>
                 <button class="tab-btn" data-tab="Lunch">Lunch</button>
                 <button class="tab-btn" data-tab="classics">Classics</button>
                 <button class="tab-btn" data-tab="Drinks">Drinks</button>
+                <button class="tab-btn" data-tab="HotBeverages">Hot Beverages</button>
             </div>
-            <!-- Menu content will be dynamically populated here -->
+            <!-- Loading skeleton -->
+            <div class="menu-loading-skeleton" id="menuLoadingSkeleton">
+                <div class="skeleton-grid">
+                    <div class="skeleton-card">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-price"></div>
+                        <div class="skeleton-description"></div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-price"></div>
+                        <div class="skeleton-description"></div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-price"></div>
+                        <div class="skeleton-description"></div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-price"></div>
+                        <div class="skeleton-description"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-content-container" id="menuContentContainer"></div>
         </div>
     </section>
+
+    <!-- Admin Panel Section -->
+    <section class="admin-panel" id="adminPanel" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Admin Panel</h2>
+            <div id="adminLogin" class="admin-login-form">
+                <h3>Admin Login</h3>
+                <div class="form-group">
+                    <input type="text" id="adminUsername" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="adminPassword" placeholder="Password">
+                </div>
+                <button id="adminLoginBtn" class="cta-button">Login</button>
+            </div>
+            <div id="adminDashboard" style="display: none;">
+                <div class="admin-controls">
+                    <button id="addMenuItemBtn" class="tab-btn">+ Add Menu Item</button>
+                    <button id="refreshMenuBtn" class="tab-btn">Refresh Menu</button>
+                    <button id="adminLogoutBtn" class="tab-btn">Logout</button>
+                </div>
+                <div id="adminMenuItems" class="admin-menu-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add/Edit Menu Item Modal -->
+    <div class="modal" id="menuItemModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeMenuItemModal">&times;</button>
+            <h3 id="menuItemModalTitle">Add Menu Item</h3>
+            <form id="menuItemForm">
+                <div class="form-group">
+                    <label>Name *</label>
+                    <input type="text" id="itemName" required>
+                </div>
+                <div class="form-group">
+                    <label>Price *</label>
+                    <input type="text" id="itemPrice" required>
+                </div>
+                <div class="form-group">
+                    <label>Image URL *</label>
+                    <input type="text" id="itemImage" required>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="itemDescription" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Category *</label>
+                    <select id="itemCategory" required>
+                        <option value="BreakFast">BreakFast</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="classics">Classics</option>
+                        <option value="Drinks">Drinks</option>
+                        <option value="HotBeverages">Hot Beverages</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Sizes (JSON array, optional)</label>
+                    <textarea id="itemSizes" placeholder='[{"label":"Small","price":"M15"},{"label":"Large","price":"M20"}]' rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Flavors (JSON array, optional)</label>
+                    <textarea id="itemFlavors" placeholder='[{"label":"Orange","color":"#f97316"}]' rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Starch Options (JSON array, optional)</label>
+                    <textarea id="itemStarchOptions" placeholder='[{"label":"Papa","addon":0},{"label":"Leqebekoane","addon":5}]' rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="modal-btn secondary" id="cancelMenuItemBtn">Cancel</button>
+                    <button type="submit" class="modal-btn primary">Save Item</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <section class="contact" id="contact">
         <div class="container">
@@ -195,127 +310,80 @@
         </div>
     </section>
 
+    <!-- Order Modal -->
     <div class="order-modal" id="orderModal">
         <div class="modal-content">
             <button class="close-modal" id="closeModal">&times;</button>
-
             <div class="modal-header">
                 <h3>Order <span id="modalItemName"></span></h3>
                 <p class="item-price" id="modalItemPrice"></p>
             </div>
-
             <form id="orderForm">
                 <div class="form-group">
-                    <label for="customerName"><i class="fas fa-user"></i> Your Name *</label>
-                    <input type="text" id="customerName" name="customerName" placeholder="Enter your full name"
-                        required>
+                    <label><i class="fas fa-user"></i> Your Name *</label>
+                    <input type="text" id="customerName" placeholder="Enter your full name" required>
                 </div>
-
                 <div class="form-group">
-                    <label for="customerPhone"><i class="fas fa-phone"></i> Phone Number *</label>
-                    <input type="tel" id="customerPhone" name="customerPhone" placeholder="e.g., 266 5646 8656"
-                        required>
+                    <label><i class="fas fa-phone"></i> Phone Number *</label>
+                    <input type="tel" id="customerPhone" placeholder="e.g., 266 5646 8656" required>
                 </div>
-
                 <div class="form-group">
-                    <label for="orderQuantity"><i class="fas fa-hashtag"></i> Quantity *</label>
+                    <label><i class="fas fa-hashtag"></i> Quantity *</label>
                     <div class="quantity-selector">
                         <button type="button" class="quantity-btn minus" id="decreaseQty">-</button>
-                        <input type="number" id="orderQuantity" name="orderQuantity" value="1" min="1" max="10">
+                        <input type="number" id="orderQuantity" value="1" min="1" max="10">
                         <button type="button" class="quantity-btn plus" id="increaseQty">+</button>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label><i class="fas fa-edit"></i> Special Instructions (Optional)</label>
-                    <textarea id="specialInstructions" name="specialInstructions"
-                        placeholder="Any special requests or allergies..." rows="3"></textarea>
+                    <textarea id="specialInstructions" placeholder="Any special requests or allergies..." rows="3"></textarea>
                 </div>
-
                 <div class="order-summary">
                     <h4><i class="fas fa-receipt"></i> Order Summary</h4>
-                    <div class="summary-item">
-                        <span>Item:</span>
-                        <span id="summaryItemName"></span>
-                    </div>
-                    <div class="summary-item">
-                        <span>Quantity:</span>
-                        <span id="summaryQuantity">1</span>
-                    </div>
-                    <div class="summary-item">
-                        <span>Unit Price:</span>
-                        <span id="summaryUnitPrice"></span>
-                    </div>
-                    <div class="summary-item total">
-                        <span><strong>Total:</strong></span>
-                        <span><strong id="summaryTotalPrice"></strong></span>
-                    </div>
+                    <div class="summary-item"><span>Item:</span><span id="summaryItemName"></span></div>
+                    <div class="summary-item"><span>Quantity:</span><span id="summaryQuantity">1</span></div>
+                    <div class="summary-item"><span>Unit Price:</span><span id="summaryUnitPrice"></span></div>
+                    <div class="summary-item total"><span><strong>Total:</strong></span><span><strong id="summaryTotalPrice"></strong></span></div>
                 </div>
-
                 <div class="form-actions">
                     <button type="button" class="modal-btn secondary" id="cancelOrder">Cancel</button>
-                    <button type="submit" class="modal-btn primary" id="submitOrder">
-                        <i class="fas fa-shopping-cart"></i> Place Order
-                    </button>
+                    <button type="submit" class="modal-btn primary" id="submitOrder"><i class="fas fa-shopping-cart"></i> Place Order</button>
                 </div>
             </form>
         </div>
     </div>
 
+    <!-- Success Modal -->
     <div class="success-modal" id="successModal">
         <div class="modal-content success-content">
-            <div class="success-icon">
-                <i class="fas fa-check-circle"></i>
-            </div>
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
             <h3>Order Successful!</h3>
             <p class="success-message">Thank you for your order. We'll prepare it right away!</p>
-
             <div class="order-details">
-                <div class="detail-item">
-                    <span>Order #:</span>
-                    <span class="order-number" id="successOrderNumber"></span>
-                </div>
-                <div class="detail-item">
-                    <span>Item:</span>
-                    <span id="successItemName"></span>
-                </div>
-                <div class="detail-item">
-                    <span>Quantity:</span>
-                    <span id="successQuantity"></span>
-                </div>
-                <div class="detail-item">
-                    <span>Total:</span>
-                    <span id="successTotalPrice"></span>
-                </div>
-                <div class="detail-item">
-                    <span>Estimated Pickup:</span>
-                    <span class="pickup-time">15-20 minutes</span>
-                </div>
+                <div class="detail-item"><span>Order #:</span><span class="order-number" id="successOrderNumber"></span></div>
+                <div class="detail-item"><span>Item:</span><span id="successItemName"></span></div>
+                <div class="detail-item"><span>Quantity:</span><span id="successQuantity"></span></div>
+                <div class="detail-item"><span>Total:</span><span id="successTotalPrice"></span></div>
+                <div class="detail-item"><span>Estimated Pickup:</span><span class="pickup-time">15-20 minutes</span></div>
             </div>
-
             <div class="success-actions">
-                <p class="modal-contact-info"><i class="fas fa-info-circle"></i> We'll call you at <span
-                        id="successPhone"></span> if needed</p>
+                <p class="modal-contact-info"><i class="fas fa-info-circle"></i> We'll call you at <span id="successPhone"></span> if needed</p>
                 <button class="modal-btn primary" id="closeSuccess">Continue Browsing</button>
             </div>
         </div>
     </div>
 
+    <!-- Image Lightbox -->
     <div class="image-lightbox" id="imageLightbox">
         <button class="lightbox-close" id="lightboxClose">&times;</button>
-
         <div class="lightbox-content" id="lightboxContent">
             <img class="lightbox-image" id="lightboxImage" src="" alt="">
             <div class="lightbox-caption" id="lightboxCaption"></div>
         </div>
-
         <div class="lightbox-nav">
-            <button class="lightbox-nav-btn prev-lightbox" id="prevLightbox">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="lightbox-nav-btn next-lightbox" id="nextLightbox">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+            <button class="lightbox-nav-btn prev-lightbox" id="prevLightbox"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-nav-btn next-lightbox" id="nextLightbox"><i class="fas fa-chevron-right"></i></button>
         </div>
     </div>
 
@@ -323,10 +391,10 @@
         <div class="container">
             <p>© 2025 Top Grill - Kota Specialists. All rights reserved.</p>
             <p>Mookoli, Modise complex opposite Engine filling station <br> +266 56468656 | +266 58858870</p>
-            <p style="margin-top: 10px; font-size: 0.8rem;">Kota • Burgers • Chinese Food • Chesa-nyama • Local Favorite
-            </p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">Kota • Burgers • Chinese Food • Chesa-nyama • Local Favorite</p>
         </div>
     </footer>
-    <script src="javascript/script.js"></script>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
