@@ -1,6 +1,14 @@
 // API Configuration
-const API_BASE_URL = 'http://localhost:5000/api';
-const ASSETS_BASE_URL = 'http://localhost:5000';
+const isLocal = window.location.hostname === 'localhost';
+
+const API_BASE_URL = isLocal
+  ? 'http://localhost:5000/api'
+  : 'https://topgrill-back.onrender.com/api';
+
+const ASSETS_BASE_URL = isLocal
+  ? 'http://localhost:5000'
+  : 'https://topgrill-back.onrender.com';
+  
 let adminToken = localStorage.getItem('adminToken');
 let menuItems = [];
 
