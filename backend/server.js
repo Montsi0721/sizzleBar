@@ -44,9 +44,9 @@ app.set('trust proxy', 1);
 
 app.use(cors({
     origin: [
-        'http://localhost:3000',
-        'http://127.0.0.1:5500',
-        'http://localhost:5500',
+        'http://localhost:3000', 
+        'http://127.0.0.1:5500', 
+        'http://localhost:5500', 
         'https://sizzle-bar.onrender.com'
     ],
     credentials: true
@@ -111,4 +111,6 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
