@@ -416,7 +416,7 @@ const menuData = [
     {
         name: "Twist",
         price: "M15",
-        image: "/assets/fanta.jpeg",
+        image: "/assets/twist.png",
         description: "Fruity and refreshing",
         category: "Drinks",
         sizes: [
@@ -432,7 +432,7 @@ const menuData = [
     {
         name: "Cappy",
         price: "M15",
-        image: "/assets/fanta.jpeg",
+        image: "/assets/cappy.jpeg",
         description: "Fruity and refreshing",
         category: "Drinks",
         sizes: [
@@ -448,7 +448,7 @@ const menuData = [
     {
         name: "Liqui Fruit",
         price: "M20",
-        image: "/assets/fanta.jpeg",
+        image: "/assets/liqui-fruit.png",
         description: "Fruity and refreshing juice",
         category: "Drinks",
         sizes: [
@@ -463,7 +463,7 @@ const menuData = [
     {
         name: "Rhodes",
         price: "M35",
-        image: "/assets/fanta.jpeg",
+        image: "/assets/rhodes.jpg",
         description: "Premium fruit juice",
         category: "Drinks",
         sizes: [
@@ -492,7 +492,7 @@ const menuData = [
     {
         name: "Oros",
         price: "M12",
-        image: "/assets/sprite.jpeg",
+        image: "/assets/oros.jpg",
         description: "Refreshing orange drink",
         category: "Drinks",
         sizes: [
@@ -503,7 +503,7 @@ const menuData = [
     {
         name: "Switch",
         price: "M12",
-        image: "/assets/red-bull.jpeg",
+        image: "/assets/switch.webp",
         description: "Energy drink",
         category: "Drinks",
         flavors: [
@@ -514,7 +514,7 @@ const menuData = [
     {
         name: "Dragon",
         price: "M15",
-        image: "/assets/red-bull.jpeg",
+        image: "/assets/dragon.jpeg",
         description: "Premium energy drink",
         category: "Drinks",
         flavors: [
@@ -525,7 +525,7 @@ const menuData = [
     {
         name: "Reboost",
         price: "M15",
-        image: "/assets/red-bull.jpeg",
+        image: "/assets/reboost.jpeg",
         description: "Energy drink",
         category: "Drinks"
     },
@@ -539,42 +539,42 @@ const menuData = [
     {
         name: "Redbull",
         price: "M25",
-        image: "/assets/powerate.jpeg",
+        image: "/assets/redbull.jpeg",
         description: "Premium energy drink",
         category: "Drinks"
     },
     {
         name: "Appletiser",
         price: "M25",
-        image: "/assets/powerate.jpeg",
+        image: "/assets/appletizer.png",
         description: "Sparkling apple juice",
         category: "Drinks"
     },
     {
         name: "Grapetiser",
         price: "M25",
-        image: "/assets/powerate.jpeg",
+        image: "/assets/grapetizer.webp",
         description: "Sparkling grape juice",
         category: "Drinks"
     },
     {
         name: "Twizza",
         price: "M15",
-        image: "/assets/powerate.jpeg",
+        image: "/assets/twizza.png",
         description: "Soft drink",
         category: "Drinks"
     },
     {
         name: "Alkaline Water",
         price: "M25",
-        image: "/assets/powerate.jpeg",
+        image: "/assets/alkaline-water.jpeg",
         description: "Alkaline spring water",
         category: "Drinks"
     },
     {
         name: "Dewdrop",
         price: "M10",
-        image: "/assets/powerate.jpeg",
+        image: "/",
         description: "Flavoured drink",
         category: "Drinks",
         sizes: [

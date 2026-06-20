@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- EmailJS removed: orders now sent via secure backend endpoint -->
 </head>
 <body>
     <header style="padding: 15px 0px; background-color: rgba(26, 26, 26, 0.98);">
@@ -37,7 +37,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#menu">Menu</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="admin.html" target="_blank">Admin Panel</a></li>
+                    <!-- Admin panel is accessed by typing 'admin' in the search bar -->
                     <li class="dark-mode-toggle-container">
                         <button id="darkModeToggle" class="dark-mode-toggle">
                             <i class="fas fa-moon"></i>
@@ -48,182 +48,192 @@
             </nav>
         </div>
     </header>
-
-    <section class="hero-carousel" id="home">
-        <div class="carousel-slides">
-            <div class="carousel-slide active">
-                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-                    alt="Delicious Kota Burger">
-                <div class="carousel-content">
-                    <h1>KOTA <span>PERFECTION</span></h1>
-                    <p>Home of the best Kotas in town. Fresh, loaded, and bursting with flavor in every bite.</p>
-                    <p>Ha Pena Pena, Kofi Ana Road & Abia Road Junction</p>
-                    <a href="#menu" class="cta-button">Explore Our Menu</a>
-                </div>
-            </div>
-
-            <div class="carousel-slide">
-                <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-                    alt="Juicy Burgers">
-                <div class="carousel-content">
-                    <h1>JUICY <span>BURGERS</span></h1>
-                    <p>Handcrafted burgers made with premium ingredients and served with crispy fries.</p>
-                    <p>Freshly prepared daily with love and passion.</p>
-                    <a href="#menu" class="cta-button">View Burgers</a>
-                </div>
-            </div>
-
-            <div class="carousel-slide">
-                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-                    alt="Chesa-nyama Special">
-                <div class="carousel-content">
-                    <h1>CHESA-NYAMA <span>SPECIAL</span></h1>
-                    <p>Authentic South African braai experience with flavorful meats and traditional sides.</p>
-                    <p>Served with papa and your choice of moroho or chakalaka.</p>
-                    <a href="#menu" class="cta-button">Try Our Chesa</a>
-                </div>
-            </div>
-
-            <div class="carousel-slide">
-                <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-                    alt="Chinese Food">
-                <div class="carousel-content">
-                    <h1>ASIAN <span>FLAVORS</span></h1>
-                    <p>Delicious Chinese food options available in small, medium, and large portions.</p>
-                    <p>Perfect for sharing or enjoying by yourself.</p>
-                    <a href="#menu" class="cta-button">See Chinese Menu</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="carousel-controls">
-            <button class="carousel-btn prev-btn">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="carousel-btn next-btn">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-
-        <div class="carousel-nav">
-            <button class="carousel-dot active" data-slide="0"></button>
-            <button class="carousel-dot" data-slide="1"></button>
-            <button class="carousel-dot" data-slide="2"></button>
-            <button class="carousel-dot" data-slide="3"></button>
-        </div>
-
-        <div class="carousel-auto-play">
-            <i class="fas fa-play-circle"></i>
-            <span>Auto-play</span>
-        </div>
-
-        <div class="carousel-indicators">
-            <div class="carousel-counter">
-                <span class="current-slide">1</span> / <span class="total-slides">4</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">Our Story</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Welcome to Top Grill, where we've perfected the art of the Kota. Born from a passion for
-                        authentic street food, we've taken this beloved local favorite and elevated it with our unique
-                        Top Grill touch.</p>
-                    <p>Our journey began with a simple mission: to create the most delicious, satisfying Kota experience
-                        possible. We start with fresh quarter loaves, hollowed out and toasted to perfection, then layer
-                        them with the finest ingredients.</p>
-                    <p>What sets us apart is our attention to detail. From our secret spice blends to our house-made
-                        sauces, every element is crafted with care. We believe a great Kota should be a complete meal -
-                        satisfying, flavorful, and memorable.</p>
-                    <p>Join us for our grand opening on December 4th, 2025, and taste why Top Grill is becoming the
-                        go-to destination for Kota lovers.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Delicious Kota">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="menu" id="menu">
-        <div class="container">
-            <h2 class="section-title">Our Menu</h2>
-            <div class="menu-search-container" style="max-width: 400px; margin: 0 auto 30px;">
-                <div class="search-wrapper" style="position: relative;">
-                    <i class="fas fa-search" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--gray);"></i>
-                    <input type="text" id="menuSearchInput" placeholder="Search menu items..." 
-                        style="width: 100%; padding: 12px 15px 12px 45px; border: 2px solid #e8e0d8; border-radius: 50px; font-family: 'Poppins', sans-serif; font-size: 1rem; background: var(--light); transition: all 0.3s;">
-                </div>
-            </div>
-            <div class="menu-tabs">
-                <button class="tab-btn active" data-tab="all">All</button>
-                <button class="tab-btn" data-tab="BreakFast">BreakFast</button>
-                <button class="tab-btn" data-tab="Lunch">Lunch</button>
-                <button class="tab-btn" data-tab="classics">Classics</button>
-                <button class="tab-btn" data-tab="Drinks">Drinks</button>
-                <button class="tab-btn" data-tab="HotBeverages">Hot Beverages</button>
-            </div>
-            <!-- Loading skeleton -->
-            <div class="menu-loading-skeleton" id="menuLoadingSkeleton">
-                <div class="skeleton-grid">
-                    <div class="skeleton-card">
-                        <div class="skeleton-image"></div>
-                        <div class="skeleton-title"></div>
-                        <div class="skeleton-price"></div>
-                        <div class="skeleton-description"></div>
+    <div class="main-page-content">
+        <section class="hero-carousel" id="home">
+            <div class="carousel-slides">
+                <div class="carousel-slide active">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                        alt="Delicious Kota Burger">
+                    <div class="carousel-content">
+                        <h1>KOTA <span>PERFECTION</span></h1>
+                        <p>Home of the best Kotas in town. Fresh, loaded, and bursting with flavor in every bite.</p>
+                        <p>Ha Pena Pena, Kofi Ana Road & Abia Road Junction</p>
+                        <a href="#menu" class="cta-button">Explore Our Menu</a>
                     </div>
-                    <div class="skeleton-card">
-                        <div class="skeleton-image"></div>
-                        <div class="skeleton-title"></div>
-                        <div class="skeleton-price"></div>
-                        <div class="skeleton-description"></div>
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                        alt="Juicy Burgers">
+                    <div class="carousel-content">
+                        <h1>JUICY <span>BURGERS</span></h1>
+                        <p>Handcrafted burgers made with premium ingredients and served with crispy fries.</p>
+                        <p>Freshly prepared daily with love and passion.</p>
+                        <a href="#menu" class="cta-button">View Burgers</a>
                     </div>
-                    <div class="skeleton-card">
-                        <div class="skeleton-image"></div>
-                        <div class="skeleton-title"></div>
-                        <div class="skeleton-price"></div>
-                        <div class="skeleton-description"></div>
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                        alt="Chesa-nyama Special">
+                    <div class="carousel-content">
+                        <h1>CHESA-NYAMA <span>SPECIAL</span></h1>
+                        <p>Authentic South African braai experience with flavorful meats and traditional sides.</p>
+                        <p>Served with papa and your choice of moroho or chakalaka.</p>
+                        <a href="#menu" class="cta-button">Try Our Chesa</a>
                     </div>
-                    <div class="skeleton-card">
-                        <div class="skeleton-image"></div>
-                        <div class="skeleton-title"></div>
-                        <div class="skeleton-price"></div>
-                        <div class="skeleton-description"></div>
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                        alt="Chinese Food">
+                    <div class="carousel-content">
+                        <h1>ASIAN <span>FLAVORS</span></h1>
+                        <p>Delicious Chinese food options available in small, medium, and large portions.</p>
+                        <p>Perfect for sharing or enjoying by yourself.</p>
+                        <a href="#menu" class="cta-button">See Chinese Menu</a>
                     </div>
                 </div>
             </div>
-            <div class="menu-content-container" id="menuContentContainer"></div>
-        </div>
-    </section>
 
-    <!-- Admin Panel Section -->
-    <section class="admin-panel" id="adminPanel" style="display: none;">
-        <div class="container">
-            <h2 class="section-title">Admin Panel</h2>
-            <div id="adminLogin" class="admin-login-form">
-                <h3>Admin Login</h3>
-                <div class="form-group">
-                    <input type="text" id="adminUsername" placeholder="Username">
-                </div>
-                <div class="form-group">
-                    <input type="password" id="adminPassword" placeholder="Password">
-                </div>
-                <button id="adminLoginBtn" class="cta-button">Login</button>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
-            <div id="adminDashboard" style="display: none;">
-                <div class="admin-controls">
-                    <button id="addMenuItemBtn" class="tab-btn">+ Add Menu Item</button>
-                    <button id="refreshMenuBtn" class="tab-btn">Refresh Menu</button>
-                    <button id="adminLogoutBtn" class="tab-btn">Logout</button>
+
+            <div class="carousel-nav">
+                <button class="carousel-dot active" data-slide="0"></button>
+                <button class="carousel-dot" data-slide="1"></button>
+                <button class="carousel-dot" data-slide="2"></button>
+                <button class="carousel-dot" data-slide="3"></button>
+            </div>
+
+            <div class="carousel-auto-play">
+                <i class="fas fa-play-circle"></i>
+                <span>Auto-play</span>
+            </div>
+
+            <div class="carousel-indicators">
+                <div class="carousel-counter">
+                    <span class="current-slide">1</span> / <span class="total-slides">4</span>
                 </div>
-                <div id="adminMenuItems" class="admin-menu-grid"></div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title">Our Story</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Welcome to Top Grill, where we've perfected the art of the Kota. Born from a passion for
+                            authentic street food, we've taken this beloved local favorite and elevated it with our unique
+                            Top Grill touch.</p>
+                        <p>Our journey began with a simple mission: to create the most delicious, satisfying Kota experience
+                            possible. We start with fresh quarter loaves, hollowed out and toasted to perfection, then layer
+                            them with the finest ingredients.</p>
+                        <p>What sets us apart is our attention to detail. From our secret spice blends to our house-made
+                            sauces, every element is crafted with care. We believe a great Kota should be a complete meal -
+                            satisfying, flavorful, and memorable.</p>
+                        <p>Join us for our grand opening on December 4th, 2025, and taste why Top Grill is becoming the
+                            go-to destination for Kota lovers.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Delicious Kota">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu" id="menu">
+            <div class="container">
+                <h2 class="section-title">Our Menu</h2>
+                <div class="menu-search-container" style="max-width: 400px; margin: 0 auto 30px;">
+                    <div class="search-wrapper" style="position: relative;">
+                        <i class="fas fa-search" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--gray);"></i>
+                        <input type="text" id="menuSearchInput" placeholder="Search menu items..."
+                            style="width: 100%; padding: 12px 15px 12px 45px; border: 2px solid #e8e0d8; border-radius: 50px; font-family: 'Poppins', sans-serif; font-size: 1rem; background: var(--light); transition: all 0.3s;">
+                    </div>
+                </div>
+                <div class="menu-tabs">
+                    <button class="tab-btn active" data-tab="all">All</button>
+                    <button class="tab-btn" data-tab="BreakFast">BreakFast</button>
+                    <button class="tab-btn" data-tab="Lunch">Lunch</button>
+                    <button class="tab-btn" data-tab="classics">Classics</button>
+                    <button class="tab-btn" data-tab="Drinks">Drinks</button>
+                    <button class="tab-btn" data-tab="HotBeverages">Hot Beverages</button>
+                </div>
+                <!-- Loading skeleton -->
+                <div class="menu-loading-skeleton" id="menuLoadingSkeleton">
+                    <div class="skeleton-grid">
+                        <div class="skeleton-card">
+                            <div class="skeleton-image"></div>
+                            <div class="skeleton-title"></div>
+                            <div class="skeleton-price"></div>
+                            <div class="skeleton-description"></div>
+                        </div>
+                        <div class="skeleton-card">
+                            <div class="skeleton-image"></div>
+                            <div class="skeleton-title"></div>
+                            <div class="skeleton-price"></div>
+                            <div class="skeleton-description"></div>
+                        </div>
+                        <div class="skeleton-card">
+                            <div class="skeleton-image"></div>
+                            <div class="skeleton-title"></div>
+                            <div class="skeleton-price"></div>
+                            <div class="skeleton-description"></div>
+                        </div>
+                        <div class="skeleton-card">
+                            <div class="skeleton-image"></div>
+                            <div class="skeleton-title"></div>
+                            <div class="skeleton-price"></div>
+                            <div class="skeleton-description"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-content-container" id="menuContentContainer"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Admin Panel Section (hidden; revealed by typing 'admin' in the search bar) -->
+    <div id="adminOverlay" class="admin-panel-overlay">
+        <div class="admin-panel-card">
+            <div class="admin-panel-header">
+                <h2><i class="fas fa-shield-alt"></i> Admin Control</h2>
+                <button id="adminOverlayCloseBtn" class="admin-panel-close">&times;</button>
+            </div>
+            <div class="admin-panel-body">
+                <!-- Login Section -->
+                <div id="adminLoginSection">
+                    <div class="admin-login-form-compact">
+                        <h3 style="margin-bottom: 20px;">Admin Authentication</h3>
+                        <input type="text" id="adminUsername" placeholder="Username">
+                        <input type="password" id="adminPassword" placeholder="Password">
+                        <button id="adminLoginBtnOverlay" class="cta-button" style="margin-top: 15px; width: 100%;">Login to Dashboard</button>
+                    </div>
+                </div>
+                <!-- Dashboard Section (hidden until login) -->
+                <div id="adminDashboardSection" style="display: none;">
+                    <div class="admin-dashboard-header">
+                        <h3><i class="fas fa-tachometer-alt"></i> Menu Manager</h3>
+                        <div class="dashboard-controls">
+                            <button id="addMenuItemBtnOverlay" class="tab-btn" style="background: var(--secondary);">+ Add Item</button>
+                            <button id="refreshMenuBtnOverlay" class="tab-btn">Refresh</button>
+                            <button id="adminLogoutBtnOverlay" class="tab-btn" style="background: #c8102e; color:white;">Logout</button>
+                        </div>
+                    </div>
+                    <div id="adminMenuItemsGrid" class="admin-grid"></div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+
 
     <!-- Add/Edit Menu Item Modal -->
     <div class="modal" id="menuItemModal">
